@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CSS reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+/* Colors */
+
+:root {
+  --blue: #504768;
+  --gray: #666;
+  --gradient-start: #32346A;
+  --gradient-middle: #D7316D;
+  --gradient-end: #F9E129;
+}
+
+/* Typography */
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+}
+
+/* --Headings */
+
+.heading-1 {
+  /* ----Company name */
+}
+
+.heading-2 {
+  /* ----Page title */
+}
+
+.heading-3 {
+  /* ----Tab title */
+}
+
+/* --Paragraphs */
+
+.paragraph-1 {
+  /* ----Regular paragraph */
+}
+
+.paragraph-2 {
+  /* ----Company description */
+}
+
+.strong {
+
+}
+
+/* --Links */
+
+.link-1 {
+  /* ----Nav link */
+}
+
+.link-2 {
+  /* ----Text link */
+}
+
+/* --Buttons */
+
+.button-1 {
+  /* ----Regular button */
+}
