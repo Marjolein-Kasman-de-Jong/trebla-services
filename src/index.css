@@ -43,15 +43,10 @@ html {
 .heading-1 {
   /* ----Company name */
   font-size: 1.5rem;
+  text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-  .heading-1 {
-    font-size: 2rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 353px) {
   .heading-1 {
     font-size: 2.5rem;
   }
@@ -88,14 +83,20 @@ html {
 
 .paragraph-2 {
   /* ----Company description */
-  font-size: .875rem;
-  text-align: center;
+  font-size: .5rem;
+  text-align: right;
+}
+
+@media screen and (min-width: 353px) {
+  .paragraph-2 {
+    font-size: .75rem;
+    
+  }
 }
 
 @media screen and (min-width: 768px) {
   .paragraph-2 {
-    font-size: 1rem;
-    text-align: right;
+    font-size: .8125rem;
   }
 }
 
@@ -123,4 +124,11 @@ html {
 
 .button-1 {
   /* ----Regular button */
+}
+
+/* Images */
+
+img {
+  width: 100%;
+  display: block;
 }
