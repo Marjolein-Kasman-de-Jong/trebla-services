@@ -10,12 +10,12 @@ export default function CompanyBranding() {
             <h1 className="heading-1">
                 Trebla Services
             </h1>
-            <div className="logo-wrapper">
+            <div className="company-description">
                 <p className="paragraph-2">
                     Thermografie & Luchtdichtheid<br />
                     by Vanderbilt
                 </p>
-                <div className="image-wrapper">
+                <div className="logo-wrapper">
                     <img src={companyLogo} alt="Trebla Services logo" />
                 </div>
             </div>

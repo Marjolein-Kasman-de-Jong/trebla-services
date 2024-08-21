@@ -24,7 +24,7 @@
     }
 }
 
-.company-branding .logo-wrapper {
+.company-branding .company-description {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -32,12 +32,12 @@
 }
 
 @media screen and (min-width: 768px) {
-    .company-branding .logo-wrapper {
+    .company-branding .company-description {
         gap: 20px;
     }
 }
 
-.company-branding .logo-wrapper .image-wrapper {
+.company-branding .company-description .logo-wrapper {
     width: 10vw;
     max-width: 80px;
 }
