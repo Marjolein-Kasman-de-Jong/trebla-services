@@ -28,6 +28,7 @@ input {
 html {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -68,15 +69,45 @@ html {
 
 /* --Paragraphs */
 
+[class^="paragraph"] {
+  color: var(--gray);
+  line-height: 100%;
+}
+
 .paragraph-1 {
   /* ----Regular paragraph */
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph-1 {
+    text-align: left;
+  }
 }
 
 .paragraph-2 {
   /* ----Company description */
+  font-size: .875rem;
+  text-align: center;
 }
 
-.strong {}
+@media screen and (min-width: 768px) {
+  .paragraph-2 {
+    font-size: 1rem;
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .paragraph-2 {
+    font-size: 1.25rem;
+  }
+}
+
+.strong {
+  font-weight: 700;
+}
 
 /* --Links */
 
