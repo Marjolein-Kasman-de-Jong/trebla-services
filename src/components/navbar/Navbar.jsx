@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Styles
 import "./navbar.css";
@@ -8,19 +8,19 @@ export default function Navbar() {
         <nav className="navbar">
             <ul>
                 <li className="nav-item">
-                    <NavLink to="/thermografie" className="nav-link link-1">
+                    <Link to="/thermografie" className="nav-link link-1">
                         Thermografie
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/luchtdichtheidsmetingen" className="nav-link link-1">
+                    <Link to="/luchtdichtheidsmetingen" className="nav-link link-1">
                         Luchtdichtheidsmetingen
-                    </NavLink>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/contact" className="nav-link link-1">
+                    <Link to="/contact" className="nav-link link-1">
                         Contact
-                    </NavLink></li>
+                    </Link></li>
             </ul>
         </nav>
     )
