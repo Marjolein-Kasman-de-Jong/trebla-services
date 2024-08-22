@@ -11,18 +11,24 @@ import NotFound from "./pages/not-found/NotFound";
 import PageHeader from "./components/page-header/PageHeader";
 import PageFooter from "./components/page-footer/PageFooter";
 
+// Constants
+import menuItems from "./constants/menuItems";
+
 // Styles
 import "./App.css";
 
 function App() {
+
+  
+
   return (
     <>
       <PageHeader />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/thermografie" element={<Thermografie />} />
-        <Route path="/luchtdichtheidsmetingen" element={<Luchtdichtheidsmetingen />} />
-        <Route path="/contact" element={<Contact />} />
+        {menuItems.map((item) => (
+          <Route key={item.path} path={`/${item.path}`} element={item.component} />
+        ))}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <PageFooter />
