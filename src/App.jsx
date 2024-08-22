@@ -2,9 +2,6 @@ import { Routes, Route } from "react-router-dom";
 
 // Pages
 import Home from "./pages/home/Home";
-import Thermografie from "./pages/thermografie/Thermografie";
-import Luchtdichtheidsmetingen from "./pages/luchtdichtheidsmetingen/Luchtdichtheidsmetingen";
-import Contact from "./pages/contact/Contact";
 import NotFound from "./pages/not-found/NotFound";
 
 // Components
@@ -19,17 +16,25 @@ import "./App.css";
 
 function App() {
 
-  
-
   return (
     <>
       <PageHeader />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route 
+          path="/" 
+          element={<Home />} 
+        />
         {menuItems.map((item) => (
-          <Route key={item.path} path={`/${item.path}`} element={item.component} />
+          <Route 
+            key={item.path} 
+            path={`/${item.path}`} 
+            element={item.component} 
+          />
         ))}
-        <Route path="*" element={<NotFound />} />
+        <Route 
+          path="*" 
+          element={<NotFound />} 
+        />
       </Routes>
       <PageFooter />
     </>
