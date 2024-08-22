@@ -15,27 +15,26 @@ import menuItems from "./constants/menuItems";
 import "./App.css";
 
 function App() {
-
   return (
     <>
       <PageHeader />
-      <Routes>
-        <Route 
-          path="/" 
-          element={<Home />} 
-        />
-        {menuItems.map((item) => (
-          <Route 
-            key={item.path} 
-            path={`/${item.path}`} 
-            element={item.component} 
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
           />
-        ))}
-        <Route 
-          path="*" 
-          element={<NotFound />} 
-        />
-      </Routes>
+          {menuItems.map((item) => (
+            <Route
+              key={item.path}
+              path={`/${item.path}`}
+              element={item.component}
+            />
+          ))}
+          <Route
+            path="*"
+            element={<NotFound />}
+          />
+        </Routes>
       <PageFooter />
     </>
   )

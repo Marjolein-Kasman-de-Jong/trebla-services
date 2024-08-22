@@ -16,7 +16,10 @@ export default function CompanyBranding() {
                     by Vanderbilt
                 </p>
                 <div className="logo-wrapper">
-                    <img src={companyLogo} alt="Trebla Services logo" />
+                    <img 
+                        src={companyLogo} 
+                        alt="Trebla Services logo" 
+                    />
                 </div>
             </div>
         </div>
