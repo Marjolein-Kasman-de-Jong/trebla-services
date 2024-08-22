@@ -1,5 +1,5 @@
 // Images
-import companyLogo from '../../../public/company-logo.jpg';
+import companyLogo from '/company-logo.jpg';
 
 // Styles
 import "./company-branding.css";
