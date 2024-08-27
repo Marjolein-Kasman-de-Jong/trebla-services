@@ -1,31 +1,31 @@
 // Components
 import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
-import PageTitle from "../page-title/PageTitle";
+import SectionHeroTitle from "../section-hero-title/SectionHeroTitle";
 
 // Images
-import heroThermografie from "../../assets/hero-thermografie.jpg";
-import heroLuchtdichtheidsmetingen from "../../assets/hero-luchtdichtheidsmetingen.jpg";
+import sectionHeroThermografie from "../../assets/hero-thermografie.jpg";
+import sectionHeroLuchtdichtheidsmetingen from "../../assets/hero-luchtdichtheidsmetingen.jpg";
 
 // Styles
 import "./section-hero.css";
 
 export default function SectionHero({ section }) {
-    const sectionTitle = section === "section-thermografie" ? "thermografie" : "luchtdichtheidsmetingen";
-    const heroImage = section === "section-thermografie" ? heroThermografie : heroLuchtdichtheidsmetingen;
+    const sectionHeroTitle = section === "section-thermografie" ? "thermografie" : "luchtdichtheidsmetingen";
+    const sectionHeroImage = section === "section-thermografie" ? sectionHeroThermografie : sectionHeroLuchtdichtheidsmetingen;
 
     return (
         <section className="hero">
             <article>
                 <header>
-                    <PageTitle>
+                    <SectionHeroTitle>
                         {
-                            firstLetterToUpperCase(sectionTitle)
+                            firstLetterToUpperCase(sectionHeroTitle)
                         }
-                    </PageTitle>
+                    </SectionHeroTitle>
                 </header>
                 <div className="content-wrapper">
                     <div className="image-wrapper">
-                        <img src={heroImage} alt={sectionTitle} />
+                        <img src={sectionHeroImage} alt={sectionHeroTitle} />
                     </div>
                 <p>Test</p>
                 </div>
