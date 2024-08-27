@@ -3,8 +3,8 @@ import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
 import PageTitle from "../page-title/PageTitle";
 
 // Images
-import heroThermografie from "../../../public/hero-thermografie.jpg";
-import heroLuchtdichtheidsmetingen from "../../../public/hero-luchtdichtheidsmetingen.jpg";
+import heroThermografie from "../../assets/hero-thermografie.jpg";
+import heroLuchtdichtheidsmetingen from "../../assets/hero-luchtdichtheidsmetingen.jpg";
 
 // Styles
 import "./section-hero.css";
