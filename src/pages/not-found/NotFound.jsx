@@ -1,10 +1,21 @@
+import { motion } from "framer-motion";
+
+// Animations
+import slideInOut from "../../animations/slide-in-out";
+
 // Styles
 import "./not-found.css";
 
 export default function NotFound() {
   return (
-    <main className="not-found">
+    <motion.main 
+      className="not-found"
+      variants={slideInOut}
+      initial="hidden"
+      animate="visible"
+      exit="exit" 
+    >
         Not Found
-    </main>
+    </motion.main>
   )
 }

@@ -1,10 +1,21 @@
+import { motion } from "framer-motion";
+
+// Animations
+import slideInOut from "../../animations/slide-in-out";
+
 // Styles
 import "./home.css";
 
 export default function Home() {
   return (
-    <main className="home">
+    <motion.main 
+      className="home"
+      variants={slideInOut}
+      initial="hidden"
+      animate="visible"
+      exit="exit"  
+    >
         Home
-    </main>
+    </motion.main>
   )
 }

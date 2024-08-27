@@ -1,10 +1,21 @@
+import { motion } from "framer-motion";
+
+// Animations
+import slideInOut from "../../animations/slide-in-out";
+
 // Styles
 import "./luchtdichtheidsmetingen.css";
 
 export default function Luchtdichtheidsmetingen() {
   return (
-    <main className="luchtdichtheidsmetingen">
+    <motion.main 
+      className="luchtdichtheidsmetingen"
+      variants={slideInOut}
+      initial="hidden"
+      animate="visible"
+      exit="exit"   
+    >
         Luchtdichtheidsmetingen
-    </main>
+    </motion.main>
   )
 }

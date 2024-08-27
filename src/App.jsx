@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 // Pages
 import Home from "./pages/home/Home";
@@ -15,10 +16,13 @@ import menuItems from "./constants/menuItems";
 import "./App.css";
 
 function App() {
+  const location = useLocation();
+
   return (
     <>
       <PageHeader />
-        <Routes>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.key}>
           <Route
             path="/"
             element={<Home />}
@@ -35,6 +39,7 @@ function App() {
             element={<NotFound />}
           />
         </Routes>
+      </AnimatePresence>
       <PageFooter />
     </>
   )

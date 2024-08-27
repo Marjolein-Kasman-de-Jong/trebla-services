@@ -1,10 +1,21 @@
+import { motion } from "framer-motion";
+
+// Animations
+import slideInOut from "../../animations/slide-in-out";
+
 // Styles
 import "./thermografie.css";
 
 export default function Thermografie() {
   return (
-    <main className="thermografie">
+    <motion.main 
+      className="thermografie"
+      variants={slideInOut}
+      initial="hidden"
+      animate="visible"
+      exit="exit" 
+    >
         Thermografie
-    </main>
+    </motion.main>
   )
 }
