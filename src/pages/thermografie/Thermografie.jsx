@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 
+// Components
+import SectionHero from "../../components/section-hero/SectionHero";
+
 // Animations
 import slideInOut from "../../animations/slide-in-out";
 
@@ -15,7 +18,7 @@ export default function Thermografie() {
       animate="visible"
       exit="exit" 
     >
-        Thermografie
+      <SectionHero section="section-thermografie" />
     </motion.main>
   )
 }
