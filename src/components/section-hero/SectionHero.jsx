@@ -1,33 +1,44 @@
 // Components
-import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
-import SectionHeroTitle from "../section-hero-title/SectionHeroTitle";
+import Paragraph from "../paragraph/Paragraph";
 
-// Images
-import sectionHeroThermografie from "../../assets/hero-thermografie.jpg";
-import sectionHeroLuchtdichtheidsmetingen from "../../assets/hero-luchtdichtheidsmetingen.jpg";
+// Helpers
+import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
+
+// Constants
+import sectionHeroContent from "../../constants/sectionHeroContent";
 
 // Styles
 import "./section-hero.css";
 
 export default function SectionHero({ section }) {
-    const sectionHeroTitle = section === "section-thermografie" ? "thermografie" : "luchtdichtheidsmetingen";
-    const sectionHeroImage = section === "section-thermografie" ? sectionHeroThermografie : sectionHeroLuchtdichtheidsmetingen;
+    const content = sectionHeroContent[section]
 
     return (
         <section className="hero">
             <article>
                 <header>
-                    <SectionHeroTitle>
+                    <h2 className="heading-2 section-hero-title">
                         {
-                            firstLetterToUpperCase(sectionHeroTitle)
+                            firstLetterToUpperCase(content.title)
                         }
-                    </SectionHeroTitle>
+                    </h2>
                 </header>
                 <div className="content-wrapper">
                     <div className="image-wrapper">
-                        <img src={sectionHeroImage} alt={sectionHeroTitle} />
+                        <img 
+                            src={content.image} 
+                            alt={content.title} 
+                        />
                     </div>
-                <p>Test</p>
+                    {
+                        content.textContent.map((paragraph, index) => {
+                            return (
+                                <Paragraph key={index}>
+                                    {paragraph}
+                                </Paragraph>
+                            )
+                        })
+                    }
                 </div>
             </article>
         </section>

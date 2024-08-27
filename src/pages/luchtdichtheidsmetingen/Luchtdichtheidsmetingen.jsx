@@ -18,7 +18,7 @@ export default function Luchtdichtheidsmetingen() {
       animate="visible"
       exit="exit"   
     >
-        <SectionHero section="luchtdichtheidsmetingen" />
+        <SectionHero section="section-luchtdichtheidsmetingen" />
     </motion.main>
   )
 }
