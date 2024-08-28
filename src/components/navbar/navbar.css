@@ -1,5 +1,13 @@
 .navbar {
+    margin: 40px 0 0 0;
     background: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    hyphens: none;
+}
+
+@media screen and (min-width: 585px) {
+    .navbar {
+        margin: 0;
+    }
 }
 
 .navbar ul {
