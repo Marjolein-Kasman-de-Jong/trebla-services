@@ -1,3 +1,5 @@
+import { useHeader } from "../../context/HeaderContext";
+
 // Components
 import CompanyBranding from '../company-branding/CompanyBranding';
 import Navbar from '../navbar/Navbar';
@@ -6,8 +8,10 @@ import Navbar from '../navbar/Navbar';
 import "./page-header.css";
 
 export default function PageHeader() {
+    const { headerRef } = useHeader();
+
     return (
-        <header className="page-header">
+        <header ref={headerRef} className="page-header">
             <CompanyBranding />
             <Navbar />
         </header>

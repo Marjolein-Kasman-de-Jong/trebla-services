@@ -1,3 +1,4 @@
+import  { useHeader } from "../../context/HeaderContext";
 import { motion } from "framer-motion";
 
 // Components
@@ -10,9 +11,12 @@ import slideInOut from "../../animations/slide-in-out";
 import "./thermografie.css";
 
 export default function Thermografie() {
+  const { headerHeight } = useHeader();
+
   return (
     <motion.main 
       className="thermografie"
+      style={{ paddingTop: headerHeight }}
       variants={slideInOut}
       initial="hidden"
       animate="visible"

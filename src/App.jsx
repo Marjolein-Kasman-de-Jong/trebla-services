@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { HeaderProvider } from "./context/HeaderContext";
 import { AnimatePresence } from "framer-motion";
 
 // Pages
@@ -19,7 +20,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <>
+    <HeaderProvider>
       <PageHeader />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.key}>
@@ -41,7 +42,7 @@ function App() {
         </Routes>
       </AnimatePresence>
       <PageFooter />
-    </>
+    </HeaderProvider>
   )
 }
 

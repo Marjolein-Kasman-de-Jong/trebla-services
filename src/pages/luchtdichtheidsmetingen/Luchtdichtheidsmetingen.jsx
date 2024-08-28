@@ -1,3 +1,4 @@
+import  { useHeader } from "../../context/HeaderContext";
 import { motion } from "framer-motion";
 
 // Components
@@ -10,9 +11,12 @@ import slideInOut from "../../animations/slide-in-out";
 import "./luchtdichtheidsmetingen.css";
 
 export default function Luchtdichtheidsmetingen() {
+  const { headerHeight } = useHeader();
+
   return (
     <motion.main 
       className="luchtdichtheidsmetingen"
+      style={{ paddingTop: headerHeight }}
       variants={slideInOut}
       initial="hidden"
       animate="visible"
