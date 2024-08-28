@@ -19,7 +19,7 @@ export const HeaderProvider = ({ children }) => {
     return () => {
       window.removeEventListener('resize', updateHeaderHeight);
     }
-  }, [])
+  }, [headerHeight])
 
   return (
     <HeaderContext.Provider value={{ headerHeight, headerRef }}>
