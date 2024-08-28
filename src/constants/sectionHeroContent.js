@@ -15,7 +15,6 @@ const sectionHeroContent = {
         image: sectionHeroLuchtdichtheidsmetingen,
         textContent: [
             "Luchtdichtheidsmetingen met de Blowerdoor worden bij nieuwbouw vooral ingezet om de theoretische waardes die hebben geleid tot het Energieprestatiecertificaat (EPC) op waarheid te toetsen.",
-            "Voor de bestaande bouw zijn luchtdichtheidsmetingen ideaal om luchtlekken op te sporen. Elk luchtlek kan zichtbaar worden gemaakt door inzet van de infraroodcamera en/of de rookgenerator. Het verhelpen van luchtlekkage verhoogt niet alleen het wooncomfort, maar bespaart ook energie."
         ]
     }
 }

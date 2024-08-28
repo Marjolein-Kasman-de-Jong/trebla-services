@@ -30,6 +30,7 @@ export default function SectionHero({ section }) {
                             alt={content.title} 
                         />
                     </div>
+                    <div className="text-wrapper">
                     {
                         content.textContent.map((paragraph, index) => {
                             return (
@@ -39,6 +40,7 @@ export default function SectionHero({ section }) {
                             )
                         })
                     }
+                    </div>
                 </div>
             </article>
         </section>
