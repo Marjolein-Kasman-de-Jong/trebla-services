@@ -11,15 +11,15 @@ export default function Home() {
   const { headerHeight } = useHeader();
 
   return (
-    <motion.main 
+    <motion.main
       className="home"
       style={{ paddingTop: headerHeight }}
       variants={slideInOut}
       initial="hidden"
       animate="visible"
-      exit="exit"  
+      exit="exit"
     >
-        Home
+      Home
     </motion.main>
   )
 }

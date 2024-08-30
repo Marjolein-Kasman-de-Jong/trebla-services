@@ -3,9 +3,13 @@ import { motion } from "framer-motion";
 
 // Components
 import SectionHero from "../../components/section-hero/SectionHero";
+import SectionTabs from "../../components/section-tabs/SectionTabs";
 
 // Animations
 import slideInOut from "../../animations/slide-in-out";
+
+// Helpers
+import thermografieTabsContent from "../../constants/thermografieTabsContent";
 
 // Styles
 import "./thermografie.css";
@@ -23,6 +27,7 @@ export default function Thermografie() {
       exit="exit" 
     >
       <SectionHero section="section-thermografie" />
+      <SectionTabs tabsContent={thermografieTabsContent} />
     </motion.main>
   )
 }
