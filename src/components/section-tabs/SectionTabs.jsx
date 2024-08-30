@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 // Components
 import Paragraph from "../paragraph/Paragraph";
+
+// Animations
+import slideInOut from "../../animations/slide-in-out";
 
 // Styles
 import "./section-tabs.css";
@@ -25,7 +29,10 @@ export default function SectionTabs({ tabsContent }) {
                 key={index}
                 className={index === activeTab ? "active" : null}
               >
-                <button onClick={() => changeActiveTab(index)}>
+                <button 
+                  className="heading-3" 
+                  onClick={() => changeActiveTab(index)}
+                >
                   {tab.title}
                 </button>
               </li>
@@ -33,7 +40,14 @@ export default function SectionTabs({ tabsContent }) {
           })
         }
       </ul>
-      <div>
+      <motion.div
+        key={activeTab}
+        mode="wait"
+        variants={slideInOut}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
         {
           activeContent.map((item, index) => {
             return (
@@ -43,7 +57,7 @@ export default function SectionTabs({ tabsContent }) {
             )
           })
         }
-      </div>
+      </motion.div>
     </section>
   )
 }
