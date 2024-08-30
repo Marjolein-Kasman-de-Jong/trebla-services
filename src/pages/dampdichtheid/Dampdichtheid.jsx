@@ -9,25 +9,25 @@ import SectionTabs from "../../components/section-tabs/SectionTabs";
 import slideInOut from "../../animations/slide-in-out";
 
 // Constants
-import luchtdichtheidsmetingenTabsContent from "../../constants/luchtdichtheidsmetingenTabsContent";
+import dampdichtheidTabsContent from "../../constants/dampdichtheidTabsContent";
 
 // Styles
-import "./luchtdichtheidsmetingen.css";
+import "./dampdichtheid.css";
 
-export default function Luchtdichtheidsmetingen() {
+export default function Dampdichtheid() {
   const { headerHeight } = useHeader();
 
   return (
     <motion.main 
-      className="luchtdichtheidsmetingen"
+      className="dampdichtheid"
       style={{ paddingTop: headerHeight }}
       variants={slideInOut}
       initial="hidden"
       animate="visible"
       exit="exit"   
     >
-        <SectionHero section="section-luchtdichtheidsmetingen" />
-        <SectionTabs tabsContent={luchtdichtheidsmetingenTabsContent} />
+        <SectionHero section="section-dampdichtheid" />
+        <SectionTabs tabsContent={dampdichtheidTabsContent} />
     </motion.main>
   )
 }

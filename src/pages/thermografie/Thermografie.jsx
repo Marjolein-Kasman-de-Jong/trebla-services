@@ -8,7 +8,7 @@ import SectionTabs from "../../components/section-tabs/SectionTabs";
 // Animations
 import slideInOut from "../../animations/slide-in-out";
 
-// Helpers
+// Constants
 import thermografieTabsContent from "../../constants/thermografieTabsContent";
 
 // Styles
