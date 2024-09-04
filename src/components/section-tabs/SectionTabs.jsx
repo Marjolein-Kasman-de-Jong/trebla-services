@@ -13,10 +13,12 @@ import "./section-tabs.css";
 export default function SectionTabs({ tabsContent }) {
   const [activeTab, setActiveTab] = useState(0);
   const [activeContent, setActiveContent] = useState(tabsContent[0].content);
+  const [activeImages, setActiveImages] = useState(tabsContent[0].images);
 
   function changeActiveTab(tabIndex) {
     setActiveTab(tabIndex);
     setActiveContent(tabsContent[tabIndex].content);
+    setActiveImages(tabsContent[tabIndex].images || null);
   }
 
   return (
@@ -54,9 +56,9 @@ export default function SectionTabs({ tabsContent }) {
         {
           activeContent.map((item, index) => {
             return (
-              <Paragraph key={index}>
-                {item}
-              </Paragraph>
+                <Paragraph key={index} image={activeImages[index]}>
+                  {item}
+                </Paragraph>
             )
           })
         }

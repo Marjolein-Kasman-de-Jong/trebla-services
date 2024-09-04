@@ -1,3 +1,8 @@
+import blowerdoor from "../assets/luchtdichtheidsmetingen-blowerdoor.jpg";
+import luchtlek from "../assets/luchtdichtheidsmetingen-luchtlek.jpg";
+
+import retrotecDop from "../assets/luchtdichtheidsmetingen-retrotec-dop.jpg";
+
 const luchtdichtheidsmetingenTabsContent = [
     {
         title: "Luchtdichtheid testen met Blowerdoor",
@@ -7,6 +12,16 @@ const luchtdichtheidsmetingenTabsContent = [
             "Trebla Services is gespecialiseerd en gecertificeerd in het doen van luchtdichtheids metingen. Wij maken gebruik van de gekalibreerde Retrotec Blowerdoor en werken volgens de Nederlandse normen. Certificaten zijn door BINDT (British Institute of Non-Destructive Testing) en ATTMA (Air Tightness Testing and Measurement Association) erkend.",
             "In het bouwbesluit en normen zijn de luchtdoorlatendheid van een gebouw vastgelegd. Voordat de bouwvergunning wordt afgegeven moet de theoretisch luchtdoorlatendheid worden berekend, Energieprestatiecertificaat (EPC). Er is echter maar een manier om te controleren of een gebouw werkelijk aan de wettelijke eisen voldoet! Een luchtdichtheidsmeting met de Blowerdoor.",
             "Trebla Services is ook gecertificeerd in de thermografie. Luchtlekken kunnen perfect met thermografie zichtbaar worden gemaakt met de Blowerdoor. De Blowerdoor zal de luchtstromingen door de luchtlekken forceren waardoor ze makelijker the vinden zijn. Daar waar koude lucht binnen treedt, infiltratie of warme lucht naar buiten ontsnapt, ex-filtratie, zal het warmtebeeld worden verstoord. Indien gewenst kan Trebla Services ook chemisch rook (rookmachine) inzetten om luchtlekken aan te tonen."
+        ],
+        images: [
+            {
+                image: blowerdoor,
+                alt: "Blowerdoor"
+            },
+            {
+                image: luchtlek,
+                alt: "Luchtlek"
+            }
         ]
     },
     {
@@ -16,6 +31,12 @@ const luchtdichtheidsmetingenTabsContent = [
             "Natuurlijk komt er iets meer bij kijken maar in principe is dit wat we meten. Trebla Services werkt met geavanceerde meetsoftware die het mogelijk maakt metingen te doen volgens NEN 2686, NEN-EN 13829 en de standaarden van de Air Tightness Testing and Measurement Association. Zo kunnen wij dan ook bepalen of de theoretisch waardes die hebben geleid tot het Energieprestatiecertificaat op waarheid berusten.",
             "Bij bestaande gebouwen is een luchtdichtheids meting de methode om luchtlekken in uw woning op te sporen. Dit doen we met de rookmachine en of thermografie met draaiende blowerdoor. Hierdoor kunt u heel wat energie kosten besparen en daarbij het wooncomfort verhogen.",
             "Trebla Services is gecertificeerd om luchtdichtheids metingen te doen, Domestic Airtightness Certifcate number DB 10019."
+        ],
+        images: [
+            {
+                image: retrotecDop,
+                alt: "Retrotec dop"
+            }
         ]
     },
     {

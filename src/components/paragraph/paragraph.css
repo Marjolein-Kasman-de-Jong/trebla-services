@@ -1,0 +1,9 @@
+.tabs .paragraph-1 + div {
+    padding: unset;
+    align-items: center;
+}
+
+.tabs .paragraph-1 + div > img {
+    width: auto;
+    max-width: 100%;
+}

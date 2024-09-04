@@ -1,3 +1,10 @@
+import elektromagnetischSpectrum from "../assets/thermografie-elektromagnetisch-spectrum.png";
+import infraredReflection from "../assets/thermografie-infrared-reflection.jpg";
+import prisma from "../assets/thermografie-prisma.jpg";
+
+import infraredDaylight from "../assets/thermografie-infrared-daylight.jpg";
+import infrared from "../assets/thermografie-infrared.jpg";
+
 const thermografieTabsContent = [
     {
         title: "Infrarood",
@@ -12,6 +19,20 @@ const thermografieTabsContent = [
             "De meeste objecten emiteren niet 100% van de infrarood energie, maar slechts een deel hiervan. Dit deel heet emissiviteit, de verhouding van de totale energie die door bepaalde oppervlakte bij een bepaalde temperatuur wordt uitgestraald vergeleken met een blackbody.",
             "Vochtige aarde zal een emissiegraad hebben van 0.95 (=95%). Aluminium folie 0.04 (=4%).",
             "De emissiegraden uit de tabellen zijn prima te gebruiken als algemene indicatie. Bij een kwantitatief thermografisch onderzoek ( absolute waardes zijn gevraagd) zal Trebla Services altijd de emissiewaardes van het te onderzoeken object zelf vaststellen om de nauwkeurigheid van het thermografisch onderzoek te waarborgen."
+        ],
+        images: [
+            {
+                image: elektromagnetischSpectrum,
+                alt: "Elektromagnetisch spectrum"
+            },
+            {
+                image: infraredReflection,
+                alt: "Infraroodreflectie"
+            },
+            {
+                image:  prisma,
+                alt: "Prisma"
+            }
         ]
     },
     {
@@ -20,6 +41,16 @@ const thermografieTabsContent = [
             "Trebla Services kwam in 1985 voor het eerste in aanraking met thermografisch opnames gemaakt met de infrarood camera. In 1986 volgende er opleiding en training. Werkgebied lag toen bij Defensie, Economische zaken en Justitie.",
             "Beeldafdrukken waren toen alleen in zwart/wit beschikbaar vergelijkbaar met röntgenen opnames. Met geavanceerde software en krachtige computers kan Trebla Services nu warmtebeeld opnames door gebruik van verschillende kleurpaletten ook in kleur weergeven. De leesbaarheid wordt hiermee duidelijk vergroot de mens kan ongeveer 64 grijstinten zien en bij kleuren ligt dat zo bij 1 miljoen.",
             "De Infrarood opnames gemaakt door Trebla Services worden zo opgeslagen dat er achteraf nog enige beeldbewerking mogelijk is. De opname moet echter wel scherp zijn, met de juiste Focus. Het is vergelijkbaar met het scherp stellen van een gewone foto, dus niet wazig. Alleen praten Thermografen over een goede Thermische Focus."
+        ],
+        images: [
+            {
+                image: infraredDaylight,
+                alt: "Infrarood daglicht"
+            },
+            {
+                image: infrared,
+                alt: "Infrarood"
+            }
         ]
     }
 ]
