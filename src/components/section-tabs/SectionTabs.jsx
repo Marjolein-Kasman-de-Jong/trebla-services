@@ -21,25 +21,28 @@ export default function SectionTabs({ tabsContent }) {
 
   return (
     <section className="tabs">
-      <ul>
-        {
-          tabsContent.map((tab, index) => {
-            return (
-              <li
-                key={index}
-                className={index === activeTab ? "active" : null}
-              >
-                <button 
-                  className="heading-3" 
-                  onClick={() => changeActiveTab(index)}
+      <header>
+        <ul>
+          {
+            tabsContent.map((tab, index) => {
+              return (
+                <li
+                  key={index}
+                  className={index === activeTab ? "active" : null}
                 >
-                  {tab.title}
-                </button>
-              </li>
-            )
-          })
-        }
-      </ul>
+                  <button
+                    onClick={() => changeActiveTab(index)}
+                  >
+                    <h3 className="heading-3">
+                      {tab.title}
+                    </h3>
+                  </button>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </header>
       <motion.div
         key={activeTab}
         mode="wait"
