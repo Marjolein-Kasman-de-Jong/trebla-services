@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 // Components
 import Paragraph from "../paragraph/Paragraph";
+import Image from "../image/Image";
 
 // Animations
 import slideInOut from "../../animations/slide-in-out";
@@ -68,10 +69,8 @@ export default function SectionTabs({ tabsContent }) {
         <div className="images-wrapper">
           {
             activeImages.map((item, index) => {
-              const { image, alt } = item;
-
               return (
-                <img key={index} src={image} alt={alt} />
+                <Image key={index} item={item} />
               )
             })
           }

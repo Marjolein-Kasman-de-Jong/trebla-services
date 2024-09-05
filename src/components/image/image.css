@@ -1,0 +1,22 @@
+.clickable-image {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.clickable-image.active {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 1000;
+        transform: scale(100%) translate(-50%, -50%);
+}
+
+.backdrop.active {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 990;
+    backdrop-filter: blur(5px);
+}
