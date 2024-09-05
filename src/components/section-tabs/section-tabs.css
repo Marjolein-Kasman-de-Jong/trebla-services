@@ -65,12 +65,13 @@
 .tabs .motion-div .images-wrapper {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    row-gap: 40px;
     flex-wrap: wrap;
 }
 
-.tabs .motion-div .images-wrapper img {
-    width: unset;
-    max-width: 100%;
-    object-fit: contain;
+@media screen and (min-width: 768px) {
+    .tabs .motion-div .images-wrapper {
+        column-gap: 40px;
+    }
 }
+
