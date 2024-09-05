@@ -3,6 +3,10 @@ import luchtlek from "../assets/luchtdichtheidsmetingen-luchtlek.jpg";
 
 import retrotecDop from "../assets/luchtdichtheidsmetingen-retrotec-dop.jpg";
 
+import winddruk from "../assets/luchtdichtheidsmetingen-winddruk.jpg";
+import blowerdoor2 from "../assets/luchtdichtheidsmetingen-blowerdoor-2.jpg";
+import schoorsteeneffect from "../assets/luchtdichtheidsmetingen-schoorsteeneffect.jpg";
+
 const luchtdichtheidsmetingenTabsContent = [
     {
         title: "Luchtdichtheid testen met Blowerdoor",
@@ -47,6 +51,20 @@ const luchtdichtheidsmetingenTabsContent = [
             "Luchtdichtheidsmetingen zijn niet gevalideerd als de wind meer is als 6 m/s (= 21.6 km/u)",
             "Grote temperatuur verschillen tussen binnen en buiten beïnvloeden een meeting nadelig door het schoorsteen effect.",
             "Luchtdichtheidsmetingen zijn niet gevalideerd als verschil tussen binnen- en buitentemperatuur meer is als 10 °C."
+        ],
+        images: [
+            {
+                image: winddruk,
+                alt: "Winddruk"
+            },
+            {
+                image: blowerdoor2,
+                alt: "Blowerdoor"
+            },
+            {
+                image: schoorsteeneffect,
+                alt: "Schoorsteeneffect"
+            }
         ]
     }
 ]

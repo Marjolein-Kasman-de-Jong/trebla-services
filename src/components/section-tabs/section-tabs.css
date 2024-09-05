@@ -43,18 +43,34 @@
     background: var(--blue);
 }
 
-.tabs div {
+.tabs .motion-div {
+    padding: 24px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.tabs div {
-    padding: 24px 0;
-}
-
 @media screen and (min-width: 585px) {
-    .tabs div {
+    .tabs .motion-div {
         padding: 24px;
     }
+}
+
+.tabs .motion-div .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tabs .motion-div .images-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.tabs .motion-div .images-wrapper img {
+    width: unset;
+    max-width: 100%;
+    object-fit: contain;
 }

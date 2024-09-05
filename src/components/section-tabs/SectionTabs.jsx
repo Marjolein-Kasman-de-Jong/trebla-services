@@ -47,21 +47,35 @@ export default function SectionTabs({ tabsContent }) {
       </header>
       <motion.div
         key={activeTab}
+        className="motion-div"
         mode="wait"
         variants={slideInOut}
         initial="hidden"
         animate="visible"
         exit="exit"
       >
-        {
-          activeContent.map((item, index) => {
-            return (
-                <Paragraph key={index} image={activeImages[index]}>
+        <div className="text-wrapper">
+          {
+            activeContent.map((item, index) => {
+              return (
+                <Paragraph key={index}>
                   {item}
                 </Paragraph>
-            )
-          })
-        }
+              )
+            })
+          }
+        </div>
+        <div className="images-wrapper">
+          {
+            activeImages.map((item, index) => {
+              const { image, alt } = item;
+
+              return (
+                <img key={index} src={image} alt={alt} />
+              )
+            })
+          }
+        </div>
       </motion.div>
     </section>
   )
