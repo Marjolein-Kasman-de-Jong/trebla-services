@@ -1,4 +1,4 @@
-button {
+.read-more {
     width: 200px;
     height: 50px;
     font-size: 1rem;
@@ -10,7 +10,7 @@ button {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    button:hover {
+    .read-more:hover {
         cursor: pointer;
         color: var(--white);
         background: var(--blue);

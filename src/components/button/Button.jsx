@@ -2,7 +2,7 @@ import "./button.css";
 
 export default function Button() {
   return (
-    <button>
+    <button className="read-more">
         Lees meer
     </button>
   )
