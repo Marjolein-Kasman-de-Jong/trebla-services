@@ -1,5 +1,8 @@
+import { useLocation } from 'react-router-dom';
+
 // Components
 import Paragraph from "../paragraph/Paragraph";
+import Button from '../button/Button';
 
 // Helpers
 import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
@@ -11,12 +14,13 @@ import sectionHeroContent from "../../constants/sectionHeroContent";
 import "./section-hero.css";
 
 export default function SectionHero({ section }) {
-    const content = sectionHeroContent[section]
+    const location = useLocation();
+    const content = sectionHeroContent[section];
 
     return (
         <section className="hero">
             <article>
-                <header>
+                <header className="section-hero-header">
                     <h2 className="heading-2 section-hero-title">
                         {
                             firstLetterToUpperCase(content.title)
@@ -42,6 +46,12 @@ export default function SectionHero({ section }) {
                     }
                     </div>
                 </div>
+                {
+                    location.pathname === "/" &&
+                        <footer className="section-hero-footer">
+                            <Button />
+                        </footer>
+                }
             </article>
         </section>
     )

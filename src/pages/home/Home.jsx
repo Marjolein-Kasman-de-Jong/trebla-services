@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 // Animations
 import slideInOut from "../../animations/slide-in-out";
 
+// Components
+import SectionHero from "../../components/section-hero/SectionHero";
+
+// Constants
+import sectionHeroContent from "../../constants/sectionHeroContent";
+
 // Styles
 import "./home.css";
 
@@ -19,7 +25,11 @@ export default function Home() {
       animate="visible"
       exit="exit"
     >
-      Home
+      {
+        Object.entries(sectionHeroContent).map(([key]) => {
+          return <SectionHero key={key} section={key} />;
+        })
+      }      
     </motion.main>
   )
 }
