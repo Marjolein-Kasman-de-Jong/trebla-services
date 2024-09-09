@@ -2,7 +2,6 @@
     width: unset;
     max-width: 100%;
     object-fit: contain;
-    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
