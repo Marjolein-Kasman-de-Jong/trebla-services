@@ -121,8 +121,17 @@ html {
   }
 }
 
-.strong {
+.paragraph-3 {
+  /* ----Service higlight */
+  color: var(--white);
+  text-align: center;
+  font-size: 1rem;
   font-weight: 700;
+  line-height: 1.875rem;
+}
+
+.strong {
+  font-size: 1.2rem;
 }
 
 /* --Links */
