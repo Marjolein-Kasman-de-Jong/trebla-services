@@ -1,6 +1,9 @@
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { HeaderProvider } from "./context/HeaderContext";
 import { AnimatePresence } from "framer-motion";
+
+// Context
+import { HeaderProvider } from "./context/HeaderContext";
 
 // Pages
 import Home from "./pages/home/Home";
@@ -18,6 +21,10 @@ import "./App.css";
 
 function App() {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <HeaderProvider>
