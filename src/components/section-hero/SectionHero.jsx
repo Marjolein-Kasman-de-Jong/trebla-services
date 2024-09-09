@@ -49,7 +49,7 @@ export default function SectionHero({ section }) {
                 {
                     location.pathname === "/" &&
                         <footer className="section-hero-footer">
-                            <Button />
+                            <Button linkTo={content.title} />
                         </footer>
                 }
             </article>
