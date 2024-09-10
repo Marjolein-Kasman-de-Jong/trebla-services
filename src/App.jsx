@@ -31,7 +31,10 @@ function App() {
     <HeaderProvider>
       <PageHeader />
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.key}>
+        <Routes
+          location={location}
+          key={location.key}
+        >
           <Route
             path="/"
             element={<Home />}
