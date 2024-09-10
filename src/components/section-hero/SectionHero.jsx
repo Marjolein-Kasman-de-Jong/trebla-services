@@ -28,29 +28,32 @@ export default function SectionHero({ section }) {
                     </h2>
                 </header>
                 <div className="content-wrapper">
-                    <div className="image-wrapper">
-                        <img 
-                            src={content.image} 
-                            alt={content.title} 
-                        />
-                    </div>
-                    <div className="text-wrapper">
                     {
-                        content.textContent.map((paragraph, index) => {
-                            return (
-                                <Paragraph key={index}>
-                                    {paragraph}
-                                </Paragraph>
-                            )
-                        })
+                        content.image &&
+                            <div className="image-wrapper">
+                                <img
+                                    src={content.image}
+                                    alt={content.title}
+                                />
+                            </div>
                     }
+                    <div className="text-wrapper">
+                        {
+                            content.textContent.map((paragraph, index) => {
+                                return (
+                                    <Paragraph key={index}>
+                                        {paragraph}
+                                    </Paragraph>
+                                )
+                            })
+                        }
                     </div>
                 </div>
                 {
                     location.pathname === "/" &&
-                        <footer className="section-hero-footer">
-                            <Button linkTo={content.title} />
-                        </footer>
+                    <footer className="section-hero-footer">
+                        <Button linkTo={content.title} />
+                    </footer>
                 }
             </article>
         </section>
