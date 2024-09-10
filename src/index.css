@@ -74,7 +74,7 @@ html {
 }
 
 @media screen and (min-width: 768px) {
-  .heading-3 {
+  .legal-content-container .heading-3 {
     text-align: left;
   }
 }
