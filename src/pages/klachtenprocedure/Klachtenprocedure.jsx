@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 // Components
 import SectionHero from "../../components/section-hero/SectionHero";
-import Paragraph from "../../components/paragraph/Paragraph";
+import LegalContent from "../../components/legal-content/LegalContent";
 
 // Animations
 import slideInOut from "../../animations/slide-in-out";
@@ -27,25 +27,7 @@ export default function Klachtenprocedure() {
             exit="exit"
         >
             <SectionHero section="section-klachtenprocedure" />
-            {
-                klachtenprocedureContent.map((item, index) => {
-                    const { title, content } = item;
-
-                    return (
-                        <article key={index}>
-                            {
-                                title &&
-                                    <h3 className="heading-3">
-                                        {title}
-                                    </h3>
-                            }
-                            <Paragraph>
-                                {content}
-                            </Paragraph>
-                        </article>
-                    )
-                })
-            }
+            <LegalContent legalContent={klachtenprocedureContent} />
         </motion.main>
     )
 }
