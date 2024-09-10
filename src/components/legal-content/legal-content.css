@@ -1,0 +1,11 @@
+.legal-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.legal-content-container article {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

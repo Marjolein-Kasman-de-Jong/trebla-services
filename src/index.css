@@ -69,7 +69,14 @@ html {
 
 .heading-3 {
   /* ----Tab title, article title */
+  text-align: center;
   font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .heading-3 {
+    text-align: left;
+  }
 }
 
 .active .heading-3 {
