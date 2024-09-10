@@ -15,6 +15,7 @@ import PageFooter from "./components/page-footer/PageFooter";
 
 // Constants
 import menuItems from "./constants/menuItems";
+import documenten from "./constants/documenten";
 
 // Styles
 import "./App.css";
@@ -35,13 +36,24 @@ function App() {
             path="/"
             element={<Home />}
           />
-          {menuItems.map((item) => (
-            <Route
-              key={item.path}
-              path={`/${item.path}`}
-              element={item.component}
-            />
-          ))}
+          {
+            menuItems.map((item) => (
+              <Route
+                key={item.path}
+                path={`/${item.path}`}
+                element={item.component}
+              />
+            ))
+          }
+          {
+            documenten.map((item) => (
+              <Route
+                key={item.path}
+                path={`/${item.path}`}
+                element={item.component}
+              />
+            ))
+          }
           <Route
             path="*"
             element={<NotFound />}
