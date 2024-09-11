@@ -31,6 +31,13 @@ const sectionHeroContent = {
         textContent: [
             "Trebla Services streeft naar een snelle dienstverlening met een hoge kwaliteit. Mocht u ondanks onze inspanningen om u zo goed mogelijk van dienst te zijn en te ondersteunen, niet tevreden zijn, dan kunt u een klacht indienen. Dit document bevat informatie over hoe u uw klacht kunt indienen en binnen welke termijn u een reactie kunt verwachten.", "Met deze klachtenprocedure willen wij benadrukken veel waarde te hechten aan de relatie met onze klanten. Een uiting van ontevredenheid nemen wij dan ook uiterst serieus en zien wij tegelijkertijd als kans om onze bedrijfsvoering te optimaliseren."
         ]
+    },
+    "section-disclaimer" : {
+        title: "disclaimer",
+        image: null,
+        textContent: [
+            "Dit is de disclaimer van de website van Trebla Services, gevestigd te Westervoort. Door deze website te gebruiken stemt u in met deze disclaimer."
+        ]
     }
 }
 

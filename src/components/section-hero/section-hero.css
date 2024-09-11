@@ -16,7 +16,7 @@
 
 @media screen and (min-width: 1200px) {
     .hero .content-wrapper {
-        height: 250px;
+        max-height: 250px;
         margin: 40px 0 0 0;
         gap: 60px;
     }
