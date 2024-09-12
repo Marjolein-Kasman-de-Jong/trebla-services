@@ -25,11 +25,33 @@ export default function LegalContent({ legalContent }) {
                                         {
                                             content.map((item, index) => {
                                                 return (
-                                                    <li 
-                                                        key={index} 
+                                                    <li
+                                                        key={index}
                                                         className="paragraph-1"
                                                     >
-                                                        {item}
+                                                        {
+                                                            typeof (item) === "object" ?
+                                                                <>
+                                                                    {
+                                                                        item[0]
+                                                                    }
+                                                                    <ul>
+                                                                        {
+                                                                            item[1].map((subitem, index) => {
+                                                                                return (
+                                                                                    <li key={index}>
+                                                                                        {
+                                                                                            subitem
+                                                                                        }
+                                                                                    </li>
+                                                                                )
+                                                                            })
+                                                                        }
+                                                                    </ul>
+                                                                </>
+                                                                :
+                                                                item
+                                                        }
                                                     </li>
                                                 )
                                             })
@@ -40,7 +62,6 @@ export default function LegalContent({ legalContent }) {
                                         {content}
                                     </Paragraph>
                             }
-
                         </article>
                     )
                 })

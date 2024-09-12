@@ -38,6 +38,11 @@ const sectionHeroContent = {
         textContent: [
             "Dit is de disclaimer van de website van Trebla Services, gevestigd te Westervoort. Door deze website te gebruiken stemt u in met deze disclaimer."
         ]
+    },
+    "section-leveringsvoorwaarden" : {
+        title: "leveringsvoorwaarden",
+        image: null,
+        textContent: null
     }
 }
 

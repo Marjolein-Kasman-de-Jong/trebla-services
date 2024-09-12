@@ -2,7 +2,7 @@
     margin-top: 32px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
 }
 
 .legal-content-container article {
@@ -13,9 +13,7 @@
 
 .legal-content-container ol {
     list-style-position: inside;
-}
-
-.legal-content-container ol li {
-    padding-left: 20px;
-    text-indent: -20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }

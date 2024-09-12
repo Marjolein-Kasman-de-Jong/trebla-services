@@ -27,28 +27,32 @@ export default function SectionHero({ section }) {
                         }
                     </h2>
                 </header>
-                <div className="content-wrapper">
-                    {
-                        content.image &&
+                {
+                    (content.image || content.textContent) &&
+                    <div className="content-wrapper">
+                        {
+                            content.image &&
                             <div className="image-wrapper">
                                 <img
                                     src={content.image}
                                     alt={content.title}
                                 />
                             </div>
-                    }
-                    <div className="text-wrapper">
-                        {
-                            content.textContent.map((paragraph, index) => {
-                                return (
-                                    <Paragraph key={index}>
-                                        {paragraph}
-                                    </Paragraph>
-                                )
-                            })
                         }
+                        <div className="text-wrapper">
+                            {
+                                content.textContent &&
+                                content.textContent.map((paragraph, index) => {
+                                    return (
+                                        <Paragraph key={index}>
+                                            {paragraph}
+                                        </Paragraph>
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
-                </div>
+                }
                 {
                     location.pathname === "/" &&
                     <footer className="section-hero-footer">
