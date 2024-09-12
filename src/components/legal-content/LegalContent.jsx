@@ -19,9 +19,25 @@ export default function LegalContent({ legalContent }) {
                                     {title}
                                 </h3>
                             }
-                            <Paragraph>
-                                {content}
-                            </Paragraph>
+                            {
+                                content.length > 1 ?
+                                    <ol>
+                                        {
+                                            content.map((item, index) => {
+                                                return (
+                                                    <li key={index}>
+                                                        {item}
+                                                    </li>
+                                                )
+                                            })
+                                        }
+                                    </ol>
+                                    :
+                                    <Paragraph>
+                                        {content}
+                                    </Paragraph>
+                            }
+
                         </article>
                     )
                 })

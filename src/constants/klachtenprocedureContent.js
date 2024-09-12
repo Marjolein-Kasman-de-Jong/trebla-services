@@ -2,8 +2,8 @@ const klachtenprocedureContent = [
     {
         title: "1. Definities",
         content: [
-            "1.1. Klacht; elke schriftelijke (inclusief e-mail) uiting van ontevredenheid van een (potentiële) klant over de activiteiten van Trebla Services.",
-            "1.2. Klant; elke afnemer van een dienst van Trebla Services."
+            "Klacht; elke schriftelijke (inclusief e-mail) uiting van ontevredenheid van een (potentiële) klant over de activiteiten van Trebla Services.",
+            "Klant; elke afnemer van een dienst van Trebla Services."
         ]
     },
     {

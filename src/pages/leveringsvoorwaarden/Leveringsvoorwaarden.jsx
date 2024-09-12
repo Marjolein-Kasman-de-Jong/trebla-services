@@ -1,4 +1,4 @@
-import  { useHeader } from "../../context/HeaderContext";
+import { useHeader } from "../../context/HeaderContext";
 import { motion } from "framer-motion";
 
 // Animations
@@ -9,17 +9,19 @@ import "./leveringsvoorwaarden.css";
 
 export default function Leveringsvoorwaarden() {
   const { headerHeight } = useHeader();
+  const pdfUrl = "./public/Leveringsvoorwaarden-Trebla-Services.pdf";
 
   return (
-    <motion.main 
+    <motion.main
       className="leveringsvoorwaarden"
       style={{ paddingTop: headerHeight }}
       variants={slideInOut}
       initial="hidden"
       animate="visible"
-      exit="exit"   
+      exit="exit"
     >
-        Leveringsvoorwaarden
+      Leveringsvoorwaarden
+      
     </motion.main>
   )
 }
