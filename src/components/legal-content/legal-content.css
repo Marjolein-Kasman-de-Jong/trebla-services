@@ -10,3 +10,12 @@
     flex-direction: column;
     gap: 16px;
 }
+
+.legal-content-container ol {
+    list-style-position: inside;
+}
+
+.legal-content-container ol li {
+    padding-left: 20px;
+    text-indent: -20px;
+}

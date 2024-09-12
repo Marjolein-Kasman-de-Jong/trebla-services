@@ -25,7 +25,10 @@ export default function LegalContent({ legalContent }) {
                                         {
                                             content.map((item, index) => {
                                                 return (
-                                                    <li key={index}>
+                                                    <li 
+                                                        key={index} 
+                                                        className="paragraph-1"
+                                                    >
                                                         {item}
                                                     </li>
                                                 )
