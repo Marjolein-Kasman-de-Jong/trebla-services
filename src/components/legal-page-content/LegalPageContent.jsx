@@ -2,17 +2,17 @@
 import Paragraph from "../paragraph/Paragraph";
 
 // Styles
-import "./legal-content.css";
+import "./legal-page-content.css";
 
-export default function LegalContent({ legalContent }) {
+export default function LegalPageContent({ content }) {
     return (
         <div className="legal-content-container">
             {
-                legalContent.map((item, index) => {
-                    const { title, content } = item;
+                content.map((item, index) => {
+                    const { title, textContent } = item;
 
                     return (
-                        <article key={index}>
+                        <div key={index}>
                             {
                                 title &&
                                 <h3 className="heading-3">
@@ -20,17 +20,17 @@ export default function LegalContent({ legalContent }) {
                                 </h3>
                             }
                             {
-                                content.length > 1 ?
+                                textContent.length > 1 ?
                                     <ol>
                                         {
-                                            content.map((item, index) => {
+                                            textContent.map((item, index) => {
                                                 return (
                                                     <li
                                                         key={index}
                                                         className="paragraph-1"
                                                     >
                                                         {
-                                                            typeof (item) === "object" ?
+                                                            typeof(item) === "object" ?
                                                                 <>
                                                                     {
                                                                         item[0]
@@ -59,10 +59,10 @@ export default function LegalContent({ legalContent }) {
                                     </ol>
                                     :
                                     <Paragraph>
-                                        {content}
+                                        {textContent}
                                     </Paragraph>
                             }
-                        </article>
+                        </div>
                     )
                 })
             }

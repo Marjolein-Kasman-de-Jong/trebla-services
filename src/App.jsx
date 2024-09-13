@@ -8,6 +8,7 @@ import { HeaderProvider } from "./context/HeaderContext";
 // Pages
 import Home from "./pages/home/Home";
 import NotFound from "./pages/not-found/NotFound";
+import Legal from "./pages/legal/Legal";
 
 // Components
 import PageHeader from "./components/page-header/PageHeader";
@@ -15,12 +16,14 @@ import PageFooter from "./components/page-footer/PageFooter";
 
 // Constants
 import menuItems from "./constants/menuItems";
-import documenten from "./constants/documenten";
+import legalPageData from "./constants/legalPageData";
 
 // Styles
 import "./App.css";
 
 function App() {
+  const legalPages = Object.keys(legalPageData);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -42,18 +45,18 @@ function App() {
           {
             menuItems.map((item) => (
               <Route
-                key={item.path}
-                path={`/${item.path}`}
+                key={item}
+                path={`/${item}`}
                 element={item.component}
               />
             ))
           }
           {
-            documenten.map((item) => (
+            legalPages.map((legalPage) => (
               <Route
-                key={item.path}
-                path={`/${item.path}`}
-                element={item.component}
+                key={legalPage}
+                path={`/${legalPage}`}
+                element={<Legal legalPage={legalPage} />}
               />
             ))
           }
