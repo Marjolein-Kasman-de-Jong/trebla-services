@@ -1,25 +1,25 @@
 // Pages
-import Thermografie from "../pages/thermografie/Thermografie";
-import Luchtdichtheidsmetingen from "../pages/luchtdichtheidsmetingen/Luchtdichtheidsmetingen";
-import Dampdichtheid from "../pages/dampdichtheid/Dampdichtheid";
-import Contact from "../pages/contact/Contact";
+// import Thermografie from "../pages/thermografie/Thermografie";
+// import Luchtdichtheidsmetingen from "../pages/luchtdichtheidsmetingen/Luchtdichtheidsmetingen";
+// import Dampdichtheid from "../pages/dampdichtheid/Dampdichtheid";
+// import Contact from "../pages/contact/Contact";
 
 const menuItems = [
     { 
       path: "thermografie",
-      component: <Thermografie /> 
+      // component: <Thermografie /> 
     },
     { 
       path: "luchtdichtheidsmetingen", 
-      component: <Luchtdichtheidsmetingen /> 
+      // component: <Luchtdichtheidsmetingen /> 
     },
     {
       path: "dampdichtheid",
-      component: <Dampdichtheid />
+      // component: <Dampdichtheid />
     },
     { 
       path: "contact", 
-      component: <Contact /> 
+      // component: <Contact /> 
     }
 ];
 

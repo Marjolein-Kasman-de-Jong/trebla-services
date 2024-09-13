@@ -9,7 +9,7 @@ import ServiceHighlight from "../../components/service-highlight/ServiceHighligh
 import SectionHero from "../../components/section-hero/SectionHero";
 
 // Constants
-import sectionHeroContent from "../../constants/sectionHeroContent";
+// import sectionHeroContent from "../../constants/sectionHeroContent";
 
 // Styles
 import "./home.css";
@@ -31,9 +31,9 @@ export default function Home() {
           <span className="strong">Trebla Services</span> is uw specialist in <span className="strong">thermografie</span>, <span className="strong">luchtdichtheidsmetingen</span> en andere non-destructieve onderzoeksmethoden
         </ServiceHighlight>
         {
-          Object.entries(sectionHeroContent).map(([key]) => {
-            return <SectionHero key={key} section={key} />;
-          })
+          // Object.entries(sectionHeroContent).map(([key]) => {
+          //   return <SectionHero key={key} section={key} />;
+          // })
         }
         <ServiceHighlight>
           <span className="strong">Trebla Services</span> verricht onderzoek voor particulieren, woningbouwverenigingen, makelaars, aannemers, architecten en verzekeringsmaatschappijen

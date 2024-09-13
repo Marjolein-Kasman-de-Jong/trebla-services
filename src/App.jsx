@@ -7,21 +7,23 @@ import { HeaderProvider } from "./context/HeaderContext";
 
 // Pages
 import Home from "./pages/home/Home";
-import NotFound from "./pages/not-found/NotFound";
+import ServicePage from "./pages/service-page/ServicePage";
 import LegalPage from "./pages/legal-page/LegalPage";
+import NotFound from "./pages/not-found/NotFound";
 
 // Components
 import PageHeader from "./components/page-header/PageHeader";
 import PageFooter from "./components/page-footer/PageFooter";
 
 // Constants
-import menuItems from "./constants/menuItems";
+import servicePageData from "./constants/servicePageData";
 import legalPageData from "./constants/legalPageData";
 
 // Styles
 import "./App.css";
 
 function App() {
+  const servicePages = Object.keys(servicePageData);
   const legalPages = Object.keys(legalPageData);
 
   const location = useLocation();
@@ -43,11 +45,11 @@ function App() {
             element={<Home />}
           />
           {
-            menuItems.map((item) => (
+            servicePages.map((servicePage) => (
               <Route
-                key={item}
-                path={`/${item.path}`}
-                element={item.component}
+                key={servicePage}
+                path={`/${servicePage}`}
+                element={<ServicePage servicePage={servicePage} />}
               />
             ))
           }

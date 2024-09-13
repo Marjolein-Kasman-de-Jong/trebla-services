@@ -30,7 +30,6 @@ export default function LegalPage({ legalPage }) {
                 <LegalPageHeader content={legalPage} />
                 <LegalPageContent content={legalPageData[legalPage]} />
             </article>
-            
         </motion.main>
     )
 }

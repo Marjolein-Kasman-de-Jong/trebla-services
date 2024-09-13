@@ -8,14 +8,15 @@ import Button from '../button/Button';
 import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
 
 // Constants
-import sectionHeroContent from "../../constants/sectionHeroContent";
+import servicePageData from '../../constants/servicePageData';
 
 // Styles
 import "./section-hero.css";
 
-export default function SectionHero({ section }) {
+export default function SectionHero({ content }) {
     const location = useLocation();
-    const content = sectionHeroContent[section];
+
+    const { title, image, textContent } = content;
 
     return (
         <section className="hero">
@@ -23,26 +24,26 @@ export default function SectionHero({ section }) {
                 <header className="section-hero-header">
                     <h2 className="heading-2 section-hero-title">
                         {
-                            firstLetterToUpperCase(content.title)
+                            firstLetterToUpperCase(title)
                         }
                     </h2>
                 </header>
                 {
-                    (content.image || content.textContent) &&
+                    (image || textContent) &&
                     <div className="content-wrapper">
                         {
-                            content.image &&
+                            image &&
                             <div className="image-wrapper">
                                 <img
-                                    src={content.image}
-                                    alt={content.title}
+                                    src={image}
+                                    alt={title}
                                 />
                             </div>
                         }
                         <div className="text-wrapper">
                             {
-                                content.textContent &&
-                                content.textContent.map((paragraph, index) => {
+                                textContent &&
+                                textContent.map((paragraph, index) => {
                                     return (
                                         <Paragraph key={index}>
                                             {paragraph}
@@ -56,7 +57,7 @@ export default function SectionHero({ section }) {
                 {
                     location.pathname === "/" &&
                     <footer className="section-hero-footer">
-                        <Button linkTo={content.title} />
+                        <Button linkTo={title} />
                     </footer>
                 }
             </article>
