@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from "react";
 
 // Styles
-import "./image.css";
+import "./image-modal.css";
 
-export default function Image({ item }) {
-    const { image, alt } = item;
-
+export default function ImageModal({ img }) {
+    const { image, alt } = img;
     const [isImageClicked, toggleIsImageClicked] = useState(false);
 
     const handleImageClick = () => {
@@ -14,12 +13,14 @@ export default function Image({ item }) {
 
     return (
         <>
+            {/* Image */}
             <img
                 src={image}
                 alt={alt}
                 className={`clickable-image ${isImageClicked ? 'active' : 'not-active'}`}
                 onClick={handleImageClick}
             />
+            {/* Backdrop */}
             <div 
                 className={`backdrop ${isImageClicked ? 'active' : 'not-active'}`}
                 onClick={handleImageClick}

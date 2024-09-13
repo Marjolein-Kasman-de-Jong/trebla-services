@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 // Components
 import Paragraph from "../paragraph/Paragraph";
-import Image from "../image/Image";
+import ImageModal from "../image-modal/ImageModal";
 
 // Animations
 import slideInOut from "../../animations/slide-in-out";
@@ -73,9 +73,12 @@ export default function ServicePageTabs({ content }) {
         {/* --Tab image content */}
         <div className="images-wrapper">
           {
-            activeImages.map((item, index) => {
+            activeImages.map((img, index) => {
               return (
-                <Image key={index} item={item} />
+                <ImageModal 
+                  key={index} 
+                  img={img} 
+                />
               )
             })
           }
