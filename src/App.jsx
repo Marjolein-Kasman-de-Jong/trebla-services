@@ -46,7 +46,7 @@ function App() {
             menuItems.map((item) => (
               <Route
                 key={item}
-                path={`/${item}`}
+                path={`/${item.path}`}
                 element={item.component}
               />
             ))
