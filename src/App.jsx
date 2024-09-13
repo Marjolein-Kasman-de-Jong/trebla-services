@@ -28,6 +28,7 @@ function App() {
 
   const location = useLocation();
 
+  // Scroll to top of page on location change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
