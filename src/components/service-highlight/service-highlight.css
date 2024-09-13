@@ -1,16 +1,12 @@
 .service-highlight {
-    width: 90%;
+    width: 100%;
     margin: 20px auto;
     padding: 32px;
     background: var(--blue);
-    border-radius: 20px;
-    filter: drop-shadow(0 0 0.25rem var(--blue));
+    transition: all .3s;
 }
 
-.service-highlight:first-child {
-    transform: rotate(-2deg);
-}
-
-.service-highlight:last-child {
-    transform: rotate(2deg);
+.service-highlight:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
