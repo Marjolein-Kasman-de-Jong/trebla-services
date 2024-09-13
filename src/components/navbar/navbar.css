@@ -1,3 +1,5 @@
+/* Navbar */
+
 .navbar {
     margin: 40px 0 0 0;
     background: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
@@ -22,15 +24,19 @@
     }
 }
 
+/* Nav items */
+
 .nav-item {
     list-style-type: none;
 }
+
+/* Nav links */
 
 .nav-link {
     padding: 10px 40px;
     display: block;
     text-align: center;
-    transition: background .3s;
+    transition: all .3s;
 }
 
 @media (hover: hover) and (pointer: fine) {

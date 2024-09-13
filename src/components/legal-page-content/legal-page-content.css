@@ -10,6 +10,8 @@
     gap: 20px;
 }
 
+/* Legal content text */
+
 .legal-content-container ol,
 .legal-content-container p {
     display: flex;

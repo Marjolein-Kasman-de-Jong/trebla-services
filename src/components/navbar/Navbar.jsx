@@ -4,25 +4,27 @@ import { Link } from "react-router-dom";
 import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
 
 // Constants
-import menuItems from "../../constants/menuItems";
+import servicePageData from "../../constants/servicePageData";
 
 // Styles
 import "./navbar.css";
 
 export default function Navbar() {
+    const navItems = Object.keys(servicePageData);
+
     return (
         <nav className="navbar">
             <ul>
-                {menuItems.map((item, index) => (
+                {navItems.map((navItem, index) => (
                     <li 
                         key={index} 
                         className="nav-item"
                     >
                         <Link 
-                            to={`/${item.path}`} 
+                            to={`/${navItem}`} 
                             className="nav-link link-1"
                         >
-                            {firstLetterToUpperCase(item.path)}
+                            {firstLetterToUpperCase(navItem)}
                         </Link>
                     </li>
                 ))}

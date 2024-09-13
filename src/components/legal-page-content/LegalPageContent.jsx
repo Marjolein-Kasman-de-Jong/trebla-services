@@ -13,12 +13,14 @@ export default function LegalPageContent({ content }) {
 
                     return (
                         <div key={index}>
+                            {/* Legal content title */}
                             {
                                 title &&
                                 <h3 className="heading-3">
                                     {title}
                                 </h3>
                             }
+                            {/* Legal content text */}
                             {
                                 textContent.length > 1 ?
                                     <ol>
