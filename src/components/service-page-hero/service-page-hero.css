@@ -1,3 +1,5 @@
+/* Hero content */
+
 .service-page-hero .content-wrapper {
     margin: 32px 0 0 0;
     display: flex;
@@ -26,30 +28,16 @@
     flex: 1;
 }
 
+/* --Hero image content */
+
 .service-page-hero .image-wrapper {
     max-width: 335px;
 }
+
+/* --Hero text content */
 
 .service-page-hero .text-wrapper {
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
-
-.service-page-hero .service-page-hero-footer {
-    margin: 24px 0 0 0;
-    display: flex;
-    justify-content: center;
-}
-
-@media screen and (min-width: 768px) {
-    .hero .service-page-hero-footer {
-        margin: 32px 0 0 0;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .hero .service-page-hero-footer {
-        margin: 40px 0 0 0;
-    }
 }

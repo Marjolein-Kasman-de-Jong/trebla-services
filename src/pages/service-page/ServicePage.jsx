@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 // Components
 import ServicePageHero from "../../components/service-page-hero/ServicePageHero";
-import SectionTabs from "../../components/section-tabs/SectionTabs";
+import ServicePageTabs from "../../components/service-page-tabs/ServicePageTabs";
 
 // Animations
 import slideInOut from "../../animations/slide-in-out";
@@ -27,7 +27,7 @@ export default function ServicePage({ servicePage }) {
             exit="exit"
         >
             <ServicePageHero content={servicePageData[servicePage].hero} />
-            <SectionTabs content={servicePageData[servicePage].tabs} />
+            <ServicePageTabs content={servicePageData[servicePage].tabs} />
         </motion.main>
     )
 }

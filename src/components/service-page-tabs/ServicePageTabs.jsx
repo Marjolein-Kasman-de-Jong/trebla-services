@@ -9,21 +9,23 @@ import Image from "../image/Image";
 import slideInOut from "../../animations/slide-in-out";
 
 // Styles
-import "./section-tabs.css";
+import "./service-page-tabs.css";
 
-export default function SectionTabs({ content }) {
+export default function ServicePageTabs({ content }) {
   const [activeTab, setActiveTab] = useState(0);
-  const [activeContent, setActiveContent] = useState(content[0].content);
+  const [activeText, setActiveText] = useState(content[0].content);
   const [activeImages, setActiveImages] = useState(content[0].images);
 
-  function changeActiveTab(tabIndex) {
+  // Change active tab
+  const changeActiveTab = (tabIndex) => {
     setActiveTab(tabIndex);
-    setActiveContent(content[tabIndex].content);
+    setActiveText(content[tabIndex].content);
     setActiveImages(content[tabIndex].images || null);
   }
 
   return (
     <section className="tabs">
+      {/* Tab buttons */}
       <header>
         <ul>
           {
@@ -46,6 +48,7 @@ export default function SectionTabs({ content }) {
           }
         </ul>
       </header>
+      {/* Tab content */}
       <motion.div
         key={activeTab}
         className="service-page-tab"
@@ -55,9 +58,10 @@ export default function SectionTabs({ content }) {
         animate="visible"
         exit="exit"
       >
+        {/* --Tab text content */}
         <div className="text-wrapper">
           {
-            activeContent.map((item, index) => {
+            activeText.map((item, index) => {
               return (
                 <Paragraph key={index}>
                   {item}
@@ -66,6 +70,7 @@ export default function SectionTabs({ content }) {
             })
           }
         </div>
+        {/* --Tab image content */}
         <div className="images-wrapper">
           {
             activeImages.map((item, index) => {

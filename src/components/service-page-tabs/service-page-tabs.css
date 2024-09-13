@@ -2,6 +2,8 @@
     margin-top: 40px;
 }
 
+/* Tab buttons */
+
 .tabs ul {
     display: flex;
     flex-direction: column;
@@ -43,6 +45,8 @@
     background: var(--blue);
 }
 
+/* Tab content */
+
 .tabs .service-page-tab {
     padding: 24px 0;
     display: flex;
@@ -56,11 +60,15 @@
     }
 }
 
+/* --Tab text content */
+
 .tabs .service-page-tab .text-wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
+/* --Tab image content */
 
 .tabs .service-page-tab .images-wrapper {
     display: flex;
@@ -74,4 +82,3 @@
         column-gap: 40px;
     }
 }
-
