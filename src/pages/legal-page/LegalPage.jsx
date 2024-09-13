@@ -12,9 +12,9 @@ import slideInOut from "../../animations/slide-in-out";
 import legalPageData from "../../constants/legalPageData";
 
 // Styles
-import "./legal.css";
+import "./legal-page.css";
 
-export default function Legal({ legalPage }) {
+export default function LegalPage({ legalPage }) {
     const { headerHeight } = useHeader();
 
     return (

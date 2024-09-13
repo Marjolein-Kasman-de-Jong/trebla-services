@@ -8,7 +8,7 @@ import { HeaderProvider } from "./context/HeaderContext";
 // Pages
 import Home from "./pages/home/Home";
 import NotFound from "./pages/not-found/NotFound";
-import Legal from "./pages/legal/Legal";
+import LegalPage from "./pages/legal-page/LegalPage";
 
 // Components
 import PageHeader from "./components/page-header/PageHeader";
@@ -56,7 +56,7 @@ function App() {
               <Route
                 key={legalPage}
                 path={`/${legalPage}`}
-                element={<Legal legalPage={legalPage} />}
+                element={<LegalPage legalPage={legalPage} />}
               />
             ))
           }
