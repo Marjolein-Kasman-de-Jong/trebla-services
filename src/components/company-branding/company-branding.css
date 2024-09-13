@@ -24,6 +24,8 @@
     }
 }
 
+/* Company description */
+
 .company-branding .company-description {
     display: flex;
     justify-content: flex-end;
@@ -36,6 +38,8 @@
         gap: 20px;
     }
 }
+
+/* Company logo */
 
 .company-branding .company-description .logo-wrapper {
     width: 10vw;
