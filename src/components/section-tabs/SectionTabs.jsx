@@ -11,15 +11,15 @@ import slideInOut from "../../animations/slide-in-out";
 // Styles
 import "./section-tabs.css";
 
-export default function SectionTabs({ tabsContent }) {
+export default function SectionTabs({ content }) {
   const [activeTab, setActiveTab] = useState(0);
-  const [activeContent, setActiveContent] = useState(tabsContent[0].content);
-  const [activeImages, setActiveImages] = useState(tabsContent[0].images);
+  const [activeContent, setActiveContent] = useState(content[0].content);
+  const [activeImages, setActiveImages] = useState(content[0].images);
 
   function changeActiveTab(tabIndex) {
     setActiveTab(tabIndex);
-    setActiveContent(tabsContent[tabIndex].content);
-    setActiveImages(tabsContent[tabIndex].images || null);
+    setActiveContent(content[tabIndex].content);
+    setActiveImages(content[tabIndex].images || null);
   }
 
   return (
@@ -27,7 +27,7 @@ export default function SectionTabs({ tabsContent }) {
       <header>
         <ul>
           {
-            tabsContent.map((tab, index) => {
+            content.map((tab, index) => {
               return (
                 <li
                   key={index}
@@ -48,7 +48,7 @@ export default function SectionTabs({ tabsContent }) {
       </header>
       <motion.div
         key={activeTab}
-        className="motion-div"
+        className="service-page-tab"
         mode="wait"
         variants={slideInOut}
         initial="hidden"

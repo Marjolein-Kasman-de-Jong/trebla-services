@@ -6,7 +6,7 @@ import slideInOut from "../../animations/slide-in-out";
 
 // Components
 import ServiceHighlight from "../../components/service-highlight/ServiceHighlight";
-import SectionHero from "../../components/section-hero/SectionHero";
+import SectionHero from "../../components/service-page-hero/ServicePageHero";
 
 // Constants
 // import sectionHeroContent from "../../constants/sectionHeroContent";

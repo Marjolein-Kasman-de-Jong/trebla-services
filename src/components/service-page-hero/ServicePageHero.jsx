@@ -7,22 +7,19 @@ import Button from '../button/Button';
 // Helpers
 import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
 
-// Constants
-import servicePageData from '../../constants/servicePageData';
-
 // Styles
-import "./section-hero.css";
+import "./service-page-hero.css";
 
-export default function SectionHero({ content }) {
+export default function ServicePageHero({ content }) {
     const location = useLocation();
 
     const { title, image, textContent } = content;
 
     return (
-        <section className="hero">
+        <section className="service-page-hero">
             <article>
-                <header className="section-hero-header">
-                    <h2 className="heading-2 section-hero-title">
+                <header className="service-page-hero-header">
+                    <h2 className="heading-2">
                         {
                             firstLetterToUpperCase(title)
                         }
@@ -56,7 +53,7 @@ export default function SectionHero({ content }) {
                 }
                 {
                     location.pathname === "/" &&
-                    <footer className="section-hero-footer">
+                    <footer className="service-page-hero-footer">
                         <Button linkTo={title} />
                     </footer>
                 }

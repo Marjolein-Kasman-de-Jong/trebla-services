@@ -2,7 +2,7 @@ import { useHeader } from "../../context/HeaderContext";
 import { motion } from "framer-motion";
 
 // Components
-import SectionHero from "../../components/section-hero/SectionHero";
+import ServicePageHero from "../../components/service-page-hero/ServicePageHero";
 import SectionTabs from "../../components/section-tabs/SectionTabs";
 
 // Animations
@@ -26,8 +26,8 @@ export default function ServicePage({ servicePage }) {
             animate="visible"
             exit="exit"
         >
-            <SectionHero content={servicePageData[servicePage].hero} />
-            <SectionTabs tabsContent={servicePageData[servicePage].tabs} />
+            <ServicePageHero content={servicePageData[servicePage].hero} />
+            <SectionTabs content={servicePageData[servicePage].tabs} />
         </motion.main>
     )
 }
