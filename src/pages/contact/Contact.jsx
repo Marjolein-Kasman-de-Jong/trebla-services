@@ -22,7 +22,9 @@ export default function Contact() {
       animate="visible"
       exit="exit" 
     >
-        <h2 className="heading-2">Contact</h2>
+        <h2 className="heading-2">
+          Contact
+        </h2>
         <ContactForm />
     </motion.main>
   )

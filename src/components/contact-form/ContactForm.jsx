@@ -45,6 +45,7 @@ export default function ContactForm() {
         Object.values(formIsValid).every(value => value === true) && toggleIsDisabled(false);
     }, [formIsValid])
 
+    // Handle input change
     const handleInputChange = (e) => {
         const { name, value } = e.target;
 
@@ -54,6 +55,7 @@ export default function ContactForm() {
         })
     }
 
+    // Send email
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -65,7 +67,7 @@ export default function ContactForm() {
             })
     }
 
-    console.log(formIsValid);
+    console.log(formIsValid);       // For debugging purposes
 
     return (
         <form

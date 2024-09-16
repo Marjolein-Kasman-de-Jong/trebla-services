@@ -10,11 +10,11 @@ function validateForm(input) {
         let valid = false;
 
         if (
-            value.length >= 2 &&
-            value.length <= 50 &&
-            nameRegex.test(value) &&
-            !doubleSpaceRegex.test(value) &&
-            !doubleSymbolRegex.test(value)
+            value.length >= 2 &&                // Input contains no less than 2 characters
+            value.length <= 50 &&               // Input contains no more than 50 characters
+            nameRegex.test(value) &&            // Input contains only letters, spaces, hyphens, and apostrophes
+            !doubleSpaceRegex.test(value) &&    // Input does not contain double spaces
+            !doubleSymbolRegex.test(value)      // Input does not contain double symbols
         ) {
             valid = true;
         }
