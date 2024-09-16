@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 // Styles
 import "./button.css";
 
-export default function Button({ linkTo, type }) {
+export default function Button({ linkTo, type, isDisabled }) {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -11,10 +11,11 @@ export default function Button({ linkTo, type }) {
     }
 
     return (
-        <button 
-            className="read-more"
+        <button
+            className={type === "submit" ? "submit" : "read-more"}
             type={type === "submit" ? "submit" : "navigate"}
             onClick={handleClick}
+            disabled={type === "submit" && isDisabled}
         >
             {
                 type === "submit" ?

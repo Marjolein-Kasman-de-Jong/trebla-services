@@ -1,4 +1,5 @@
-.read-more {
+.read-more,
+.submit {
     width: 200px;
     height: 50px;
     font-size: 1rem;
@@ -10,10 +11,23 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .read-more:hover {
+    .read-more:hover,
+    .submit:hover {
         cursor: pointer;
         color: var(--white);
         background: var(--blue);
         border: none;
     }
+}
+
+.submit:disabled {
+    color: var(--light-gray);
+    border: 1px solid var(--light-gray);
+}
+
+.submit:disabled:hover {
+    cursor: unset;
+    color: var(--light-gray);
+    background: unset;
+    border: 1px solid var(--light-gray);
 }
