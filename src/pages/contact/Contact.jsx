@@ -1,6 +1,9 @@
 import { useHeader } from "../../context/HeaderContext";
 import { motion } from "framer-motion";
 
+// Components
+import ContactForm from "../../components/contact-form/ContactForm";
+
 // Animations
 import slideInOut from "../../animations/slide-in-out";
 
@@ -19,7 +22,8 @@ export default function Contact() {
       animate="visible"
       exit="exit" 
     >
-        Contact
+        <h2 className="heading-2">Contact</h2>
+        <ContactForm />
     </motion.main>
   )
 }

@@ -9,6 +9,7 @@ import { HeaderProvider } from "./context/HeaderContext";
 import Home from "./pages/home/Home";
 import ServicePage from "./pages/service-page/ServicePage";
 import LegalPage from "./pages/legal-page/LegalPage";
+import Contact from "./pages/contact/Contact";
 import NotFound from "./pages/not-found/NotFound";
 
 // Components
@@ -62,6 +63,10 @@ function App() {
               />
             ))
           }
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
           <Route
             path="*"
             element={<NotFound />}

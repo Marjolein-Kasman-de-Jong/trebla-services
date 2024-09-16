@@ -3,19 +3,25 @@ import { useNavigate } from "react-router-dom";
 // Styles
 import "./button.css";
 
-export default function Button({ linkTo }) {
+export default function Button({ linkTo, type }) {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/${linkTo}`);
+        type != "submit" && navigate(`/${linkTo}`);
     }
 
     return (
         <button 
             className="read-more"
+            type={type === "submit" ? "submit" : "navigate"}
             onClick={handleClick}
         >
-            Lees meer
+            {
+                type === "submit" ?
+                    "Verstuur"
+                    :
+                    "Lees meer"
+            }
         </button>
     )
 }
