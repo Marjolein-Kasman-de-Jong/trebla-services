@@ -1,3 +1,5 @@
+/* Home */
+
 .home {
     display: flex;
     flex-direction: column;
@@ -16,8 +18,11 @@
     }
 }
 
-@media screen and (min-width: 768px) {
-    .home .hero:nth-of-type(even) .content-wrapper {
-        flex-direction: row-reverse;
-    }
+/* Home intro card container */
+
+.home-intro-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }

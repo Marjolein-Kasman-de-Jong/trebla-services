@@ -25,7 +25,6 @@ import "./App.css";
 function App() {
   const servicePages = Object.keys(servicePageData);
   const legalPages = Object.keys(legalPageData);
-
   const location = useLocation();
 
   // Scroll to top of page on location change

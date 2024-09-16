@@ -1,0 +1,24 @@
+.home-intro-card {
+    flex: 1;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    border: 1px solid var(--light-gray);
+}
+
+.home-intro-card:nth-of-type(even) {
+    flex-direction: column-reverse;
+}
+
+.home-intro-card .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.home-intro-card .text-wrapper p {
+    text-align: center;
+}

@@ -24,6 +24,7 @@ input {
   --blue: #504768;
   --light-blue: #504768A8;
   --gray: #666;
+  --light-gray: #f0f0f0;
   --white: #FFF;
   --gradient-start: #32346A;
   --gradient-middle: #D7316D;
@@ -129,7 +130,7 @@ html {
 }
 
 .paragraph-3 {
-  /* ----Service higlight */
+  /* ----Service highlight */
   color: var(--white);
   text-align: center;
   font-size: 1rem;

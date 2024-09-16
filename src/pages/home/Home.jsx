@@ -6,10 +6,10 @@ import slideInOut from "../../animations/slide-in-out";
 
 // Components
 import ServiceHighlight from "../../components/service-highlight/ServiceHighlight";
-import SectionHero from "../../components/service-page-hero/ServicePageHero";
+import HomeIntroCard from "../../components/home-intro-card/HomeIntroCard";
 
 // Constants
-// import sectionHeroContent from "../../constants/sectionHeroContent";
+import servicePageData from "../../constants/servicePageData";
 
 // Styles
 import "./home.css";
@@ -30,11 +30,13 @@ export default function Home() {
         <ServiceHighlight>
           <span className="strong">Trebla Services</span> is uw specialist in <span className="strong">thermografie</span>, <span className="strong">luchtdichtheidsmetingen</span> en andere non-destructieve onderzoeksmethoden
         </ServiceHighlight>
-        {
-          // Object.entries(sectionHeroContent).map(([key]) => {
-          //   return <SectionHero key={key} section={key} />;
-          // })
-        }
+        <div className="home-intro-card-container">
+          {
+            Object.entries(servicePageData).map(([key]) => {
+              return <HomeIntroCard key={key} data={servicePageData[key].hero} />;
+            })
+          }
+        </div>
         <ServiceHighlight>
           <span className="strong">Trebla Services</span> verricht onderzoek voor particulieren, woningbouwverenigingen, makelaars, aannemers, architecten en verzekeringsmaatschappijen
         </ServiceHighlight>
