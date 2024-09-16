@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 // Images
 import companyLogo from "/company-logo.jpg";
 
@@ -5,10 +7,16 @@ import companyLogo from "/company-logo.jpg";
 import "./company-branding.css";
 
 export default function CompanyBranding() {
+    const navigate = useNavigate();
+    
+    const handleClick = () => {
+        navigate('/');
+    }
+
     return (
         <div className="company-branding">
             {/* Company name */}
-            <h1 className="heading-1">
+            <h1 className="heading-1" onClick={handleClick}>
                 Trebla Services
             </h1>
             {/* Company description */}

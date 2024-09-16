@@ -24,6 +24,17 @@
     }
 }
 
+/* Company name */
+
+.company-branding h1 {
+    transition: all .3s;
+}
+
+.company-branding h1:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 /* Company description */
 
 .company-branding .company-description {
