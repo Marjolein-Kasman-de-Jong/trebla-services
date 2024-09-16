@@ -1,3 +1,5 @@
+import emailjs from 'emailjs-com';
+
 // Components
 import Button from "../button/Button";
 
@@ -13,7 +15,7 @@ export default function ContactForm() {
                 console.log(result.text);
             }, (error) => {
                 console.log(error.text);
-            });
+            })
     }
 
     return (
