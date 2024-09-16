@@ -27,7 +27,10 @@ export default function HomeIntroCard({ data }) {
           </footer>
         </div>
         <div className="image-wrapper">
-          <img src={image} alt={title} />
+          <img 
+            src={image} 
+            alt={title} 
+          />
         </div>
       </article>
     </>
