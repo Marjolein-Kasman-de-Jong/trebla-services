@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react";
-import DOMPurify from "dompurify";
 import emailjs from "emailjs-com";
 
 // Components
 import Button from "../button/Button";
 
 // Helpers
+import handleInputChange from "../../helpers/handleInputChange";
 import validateForm from "../../helpers/validateForm";
 
 // Constants
 import validationErrorMessages from "../../constants/validationErrorMessages";
-import sanitizationErrorMessage from "../../constants/satitizationErrorMessage";
 
 // Styles
 import "./contact-form.css";
 
 export default function ContactForm() {
-    // Monitor formState
+    // Monitor form state
     const [formState, setFormState] = useState({
         from_name: "",
         reply_to: "",
@@ -74,32 +73,6 @@ export default function ContactForm() {
         Object.values(formIsValid).every(value => value === true) && toggleIsDisabled(false);
     }, [formIsValid])
 
-    // Handle input change
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-
-        // Escape HTML
-        let sanitizedValue = DOMPurify.sanitize(value, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] });
-
-        // Check input for dangerous scripts
-        if (/script|onerror|onload/i.test(value)) {
-            setSanitizationError(prevState => ({
-                ...prevState,
-                [name]: sanitizationErrorMessage
-            }));
-        } else {
-            setSanitizationError(prevState => ({
-                ...prevState,
-                [name]: ""
-            }));
-        }
-        
-        setFormState({
-            ...formState,
-            [name]: sanitizedValue.trim()
-        })
-    }
-    console.log(formState)
     // Send email
     const sendEmail = (e) => {
         e.preventDefault();
@@ -120,6 +93,8 @@ export default function ContactForm() {
                 })
     }
 
+    console.log(formState)
+
     return (
         <form
             className="contact-form"
@@ -131,7 +106,7 @@ export default function ContactForm() {
                 id="from_name"
                 placeholder="Naam"
                 required
-                onChange={handleInputChange}
+                onChange={(e) => handleInputChange(e, formState, setFormState, setSanitizationError)}
             />
             {
                 sanitizationError.from_name ?
@@ -152,7 +127,7 @@ export default function ContactForm() {
                 id="reply_to"
                 placeholder="Email"
                 required
-                onChange={handleInputChange}
+                onChange={(e) => handleInputChange(e, formState, setFormState, setSanitizationError)}
             />
             {
                 sanitizationError.reply_to ?
@@ -172,7 +147,7 @@ export default function ContactForm() {
                 id="message"
                 placeholder="Bericht"
                 required
-                onChange={handleInputChange}
+                onChange={(e) => handleInputChange(e, formState, setFormState, setSanitizationError)}
             >
             </textarea>
             {
