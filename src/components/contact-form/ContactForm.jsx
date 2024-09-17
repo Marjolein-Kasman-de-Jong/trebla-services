@@ -26,7 +26,7 @@ export default function ContactForm() {
         message: false
     });
 
-    const [sanitationError, setSanitationError] = useState({
+    const [sanitizationError, setSanitizationError] = useState({
         from_name: "",
         reply_to: "",
         message: ""
@@ -61,12 +61,12 @@ export default function ContactForm() {
 
         // Check input for dangerous scripts
         if (/script|onerror|onload/i.test(value)) {
-            setSanitationError(prevState => ({
+            setSanitizationError(prevState => ({
                 ...prevState,
                 [name]: "Malicious content detected."
             }));
         } else {
-            setSanitationError(prevState => ({
+            setSanitizationError(prevState => ({
                 ...prevState,
                 [name]: ""
             }));
@@ -89,7 +89,7 @@ export default function ContactForm() {
             message: formState.message,
         };
 
-        !sanitationError &&
+        !sanitizationError &&
             emailjs.send('Trebla_Services_Tes', 'template_jtim1j9', templateParams, 'EezajjiDyM7CFG1Ej')
                 .then((result) => {
                     console.log(result.text);
@@ -99,8 +99,7 @@ export default function ContactForm() {
     }
 
     console.log(formIsValid);       // For debugging purposes
-    console.log(sanitationError)
-
+    console.log(sanitizationError)
 
     return (
         <form
@@ -116,10 +115,10 @@ export default function ContactForm() {
                 onChange={handleInputChange}
             />
             {
-                sanitationError.from_name &&
-                    <p className="error">
-                        {sanitationError.from_name}
-                    </p>
+                sanitizationError.from_name &&
+                <p className="error">
+                    {sanitizationError.from_name}
+                </p>
             }
             <input
                 type="email"
@@ -130,10 +129,10 @@ export default function ContactForm() {
                 onChange={handleInputChange}
             />
             {
-                sanitationError.reply_to &&
-                    <p className="error">
-                        {sanitationError.reply_to}
-                    </p>
+                sanitizationError.reply_to &&
+                <p className="error">
+                    {sanitizationError.reply_to}
+                </p>
             }
             <textarea
                 name="message"
@@ -144,10 +143,10 @@ export default function ContactForm() {
             >
             </textarea>
             {
-                sanitationError.message &&
-                    <p className="error">
-                        {sanitationError.message}
-                    </p>
+                sanitizationError.message &&
+                <p className="error">
+                    {sanitizationError.message}
+                </p>
             }
             <Button type="submit" isDisabled={isDisabled} />
         </form>
