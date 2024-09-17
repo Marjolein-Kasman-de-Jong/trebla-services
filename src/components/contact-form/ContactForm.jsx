@@ -8,6 +8,9 @@ import Button from "../button/Button";
 // Helpers
 import validateForm from "../../helpers/validateForm";
 
+// Constants
+import validationErrorMessages from "../../constants/validationErrorMessages";
+
 // Styles
 import "./contact-form.css";
 
@@ -24,18 +27,36 @@ export default function ContactForm() {
         from_name: false,
         reply_to: false,
         message: false
-    });
+    })
+
+    const [validationError, setValidationError] = useState({
+        from_name: "",
+        reply_to: "",
+        message: ""
+    })
 
     const [sanitizationError, setSanitizationError] = useState({
         from_name: "",
         reply_to: "",
         message: ""
-    });
+    })
 
     useEffect(() => {
         Object.entries(formState).forEach(([name, value]) => {
             if (value) {
                 const propIsValid = validateForm([name, value]);
+
+                if (propIsValid) {
+                    setValidationError({
+                        ...validationError,
+                        [name]: ""
+                    })
+                } else {
+                    setValidationError({
+                        ...validationError,
+                        [name]: validationErrorMessages[name]
+                    })
+                }
 
                 setFormIsValid({
                     ...formIsValid,
@@ -98,9 +119,6 @@ export default function ContactForm() {
                 })
     }
 
-    console.log(formIsValid);       // For debugging purposes
-    console.log(sanitizationError)
-
     return (
         <form
             className="contact-form"
@@ -114,6 +132,12 @@ export default function ContactForm() {
                 required
                 onChange={handleInputChange}
             />
+            {
+                validationError.from_name &&
+                    <p className="error">
+                        {validationError.from_name}
+                    </p>
+            }
             {
                 sanitizationError.from_name &&
                     <p className="error">
@@ -129,6 +153,12 @@ export default function ContactForm() {
                 onChange={handleInputChange}
             />
             {
+                validationError.reply_to &&
+                    <p className="error">
+                        {validationError.reply_to}
+                    </p>
+            }
+            {
                 sanitizationError.reply_to &&
                     <p className="error">
                         {sanitizationError.reply_to}
@@ -142,6 +172,12 @@ export default function ContactForm() {
                 onChange={handleInputChange}
             >
             </textarea>
+            {
+                validationError.message &&
+                    <p className="error">
+                        {validationError.message}
+                    </p>
+            }
             {
                 sanitizationError.message &&
                     <p className="error">
