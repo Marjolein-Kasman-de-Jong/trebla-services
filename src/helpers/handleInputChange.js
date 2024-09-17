@@ -1,7 +1,7 @@
 import DOMPurify from "dompurify";
 
 // Constants
-import sanitizationErrorMessage from "../constants/satitizationErrorMessage";
+import sanitizationErrorMessage from "../constants/sanitizationErrorMessage";
 
 function handleInputChange(e, formState, setFormState, setSanitizationError) {
     const { name, value } = e.target;
