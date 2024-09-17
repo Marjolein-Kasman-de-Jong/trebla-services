@@ -3,7 +3,7 @@ import DOMPurify from "dompurify";
 // Constants
 import sanitizationErrorMessage from "../constants/satitizationErrorMessage";
 
-function handleInputChange (e, formState, setFormState, setSanitizationError) {
+function handleInputChange(e, formState, setFormState, setSanitizationError) {
     const { name, value } = e.target;
 
     // Escape HTML
@@ -25,7 +25,7 @@ function handleInputChange (e, formState, setFormState, setSanitizationError) {
     setFormState({
         ...formState,
         [name]: sanitizedValue.trim()
-    })
+    });
 }
 
 export default handleInputChange;

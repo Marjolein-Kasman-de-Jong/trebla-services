@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import emailjs from "emailjs-com";
 
 // Components
 import Button from "../button/Button";
@@ -7,6 +6,7 @@ import Button from "../button/Button";
 // Helpers
 import handleInputChange from "../../helpers/handleInputChange";
 import validateForm from "../../helpers/validateForm";
+import sendEmail from "../../helpers/sendEmail";
 
 // Constants
 import validationErrorMessages from "../../constants/validationErrorMessages";
@@ -73,32 +73,10 @@ export default function ContactForm() {
         Object.values(formIsValid).every(value => value === true) && toggleIsDisabled(false);
     }, [formIsValid])
 
-    // Send email
-    const sendEmail = (e) => {
-        e.preventDefault();
-
-        // Get data to send to emailJS from formState
-        const templateParams = {
-            from_name: formState.from_name,
-            reply_to: formState.reply_to,
-            message: formState.message,
-        };
-
-        Object.values(sanitizationError).every(value => value === "") &&
-            emailjs.send('Trebla_Services_Tes', 'template_jtim1j9', templateParams, 'EezajjiDyM7CFG1Ej')
-                .then((result) => {
-                    console.log(result.text);
-                }, (error) => {
-                    console.log(error.text);
-                })
-    }
-
-    console.log(formState)
-
     return (
         <form
             className="contact-form"
-            onSubmit={sendEmail}
+            onSubmit={(e) => sendEmail(e, formState, sanitizationError)}
         >
             <input
                 type="text"
