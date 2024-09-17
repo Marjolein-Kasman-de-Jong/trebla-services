@@ -1,6 +1,7 @@
 const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/;
 const doubleSpaceRegex = /\s{2,}/;
 const doubleSymbolRegex = /[^\w\s]{2,}/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function validateForm(input) {
     const [name, value] = input;
@@ -27,7 +28,7 @@ function validateForm(input) {
         let valid = false;
 
         if (
-            true
+            emailRegex.test(value)              // Input starts with one or more characters that are not whitespace or @, has exactly one @, has valid domain with at least one dot, has valid TLD
         ) {
             valid = true;
         }

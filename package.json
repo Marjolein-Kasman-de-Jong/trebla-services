@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dompurify": "^3.1.6",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.3.29",
     "pdfjs-dist": "^4.6.82",

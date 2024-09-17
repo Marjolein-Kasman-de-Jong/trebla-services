@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import DOMPurify from "dompurify";
 import emailjs from "emailjs-com";
 
 // Components
@@ -25,6 +26,12 @@ export default function ContactForm() {
         message: false
     });
 
+    const [sanitationError, setSanitationError] = useState({
+        from_name: "",
+        reply_to: "",
+        message: ""
+    });
+
     useEffect(() => {
         Object.entries(formState).forEach(([name, value]) => {
             if (value) {
@@ -49,9 +56,25 @@ export default function ContactForm() {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
 
+        // Escape HTML
+        let sanitizedValue = DOMPurify.sanitize(value, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] });
+
+        // Check input for dangerous scripts
+        if (/script|onerror|onload/i.test(value)) {
+            setSanitationError(prevState => ({
+                ...prevState,
+                [name]: "Malicious content detected."
+            }));
+        } else {
+            setSanitationError(prevState => ({
+                ...prevState,
+                [name]: ""
+            }));
+        }
+
         setFormState({
             ...formState,
-            [name]: value
+            [name]: sanitizedValue
         })
     }
 
@@ -59,15 +82,25 @@ export default function ContactForm() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('Trebla_Services_Tes', 'template_jtim1j9', e.target, 'EezajjiDyM7CFG1Ej')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            })
+        // Get data to send to emailJS from formState
+        const templateParams = {
+            from_name: formState.from_name,
+            reply_to: formState.reply_to,
+            message: formState.message,
+        };
+
+        !sanitationError &&
+            emailjs.send('Trebla_Services_Tes', 'template_jtim1j9', templateParams, 'EezajjiDyM7CFG1Ej')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
+                })
     }
 
     console.log(formIsValid);       // For debugging purposes
+    console.log(sanitationError)
+
 
     return (
         <form
@@ -82,6 +115,12 @@ export default function ContactForm() {
                 required
                 onChange={handleInputChange}
             />
+            {
+                sanitationError.from_name &&
+                    <p className="error">
+                        {sanitationError.from_name}
+                    </p>
+            }
             <input
                 type="email"
                 name="reply_to"
@@ -90,6 +129,12 @@ export default function ContactForm() {
                 required
                 onChange={handleInputChange}
             />
+            {
+                sanitationError.reply_to &&
+                    <p className="error">
+                        {sanitationError.reply_to}
+                    </p>
+            }
             <textarea
                 name="message"
                 id="message"
@@ -98,6 +143,12 @@ export default function ContactForm() {
                 onChange={handleInputChange}
             >
             </textarea>
+            {
+                sanitationError.message &&
+                    <p className="error">
+                        {sanitationError.message}
+                    </p>
+            }
             <Button type="submit" isDisabled={isDisabled} />
         </form>
     )
