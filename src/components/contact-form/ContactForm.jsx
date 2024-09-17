@@ -5,8 +5,9 @@ import Button from "../button/Button";
 
 // Helpers
 import handleInputChange from "../../helpers/handleInputChange";
-import validateForm from "../../helpers/validateForm";
 import sendEmail from "../../helpers/sendEmail";
+import setSubmitButtonState from "../../helpers/setSubmitButtonState";
+import setFormValidationState from "../../helpers/setFormValidationState";
 
 // Constants
 import validationErrorMessages from "../../constants/validationErrorMessages";
@@ -22,8 +23,8 @@ export default function ContactForm() {
         message: ""
     })
 
-    // Monitor form validity
-    const [formIsValid, setFormIsValid] = useState({
+    // Form validation state
+    const [formIsValid, toggleFormIsValid] = useState({
         from_name: false,
         reply_to: false,
         message: false
@@ -35,42 +36,22 @@ export default function ContactForm() {
         message: ""
     })
 
+    useEffect(() => {
+        setFormValidationState(formState, formIsValid, toggleFormIsValid, validationError, setValidationError, validationErrorMessages);
+    }, [formState])
+
+    // Sanitization error state    
     const [sanitizationError, setSanitizationError] = useState({
         from_name: "",
         reply_to: "",
         message: ""
     })
 
-    useEffect(() => {
-        Object.entries(formState).forEach(([name, value]) => {
-            if (value) {
-                const propIsValid = validateForm([name, value]);
-
-                if (propIsValid) {
-                    setValidationError({
-                        ...validationError,
-                        [name]: ""
-                    })
-                } else {
-                    setValidationError({
-                        ...validationError,
-                        [name]: validationErrorMessages[name]
-                    })
-                }
-
-                setFormIsValid({
-                    ...formIsValid,
-                    [name]: propIsValid
-                })
-            }
-        })
-    }, [formState])
-
-    // Monitor submit button state
+    // Submit button state
     const [isDisabled, toggleIsDisabled] = useState(true);
 
     useEffect(() => {
-        Object.values(formIsValid).every(value => value === true) && toggleIsDisabled(false);
+        setSubmitButtonState(formIsValid, toggleIsDisabled);
     }, [formIsValid])
 
     return (
