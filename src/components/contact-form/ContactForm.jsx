@@ -116,9 +116,9 @@ export default function ContactForm() {
             />
             {
                 sanitizationError.from_name &&
-                <p className="error">
-                    {sanitizationError.from_name}
-                </p>
+                    <p className="error">
+                        {sanitizationError.from_name}
+                    </p>
             }
             <input
                 type="email"
@@ -130,9 +130,9 @@ export default function ContactForm() {
             />
             {
                 sanitizationError.reply_to &&
-                <p className="error">
-                    {sanitizationError.reply_to}
-                </p>
+                    <p className="error">
+                        {sanitizationError.reply_to}
+                    </p>
             }
             <textarea
                 name="message"
@@ -144,11 +144,14 @@ export default function ContactForm() {
             </textarea>
             {
                 sanitizationError.message &&
-                <p className="error">
-                    {sanitizationError.message}
-                </p>
+                    <p className="error">
+                        {sanitizationError.message}
+                    </p>
             }
-            <Button type="submit" isDisabled={isDisabled} />
+            <Button
+                type="submit"
+                isDisabled={isDisabled}
+            />
         </form>
     )
 }

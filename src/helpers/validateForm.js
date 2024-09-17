@@ -2,6 +2,7 @@ const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/;
 const doubleSpaceRegex = /\s{2,}/;
 const doubleSymbolRegex = /[^\w\s]{2,}/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const onlySpecialCharsRegex = /^[^\w\s]+$/;
 
 function validateForm(input) {
     const [name, value] = input;
@@ -41,7 +42,11 @@ function validateForm(input) {
         let valid = false;
 
         if (
-            true
+            value.length >= 10 &&               // Input contains no less than 10 characters
+            value.length <= 500 &&              // Input contains no more than 500 characters
+            !doubleSpaceRegex.test(value) &&    // Input does not contain double spaces
+            !doubleSymbolRegex.test(value) &&   // Input does not contain double symbols
+            !onlySpecialCharsRegex.test(value)  // Input is not just special characters
         ) {
             valid = true;
         }
