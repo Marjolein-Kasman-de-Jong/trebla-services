@@ -1,3 +1,3 @@
-const sanitizationErrorMessage = "Malicious content detected.";
+const sanitizationErrorMessage = "Kwaadaardige inhoud gedetecteerd.";
 
 export default sanitizationErrorMessage;

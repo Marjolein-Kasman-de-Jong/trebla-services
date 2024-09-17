@@ -1,8 +1,4 @@
-const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$/;
-const doubleSpaceRegex = /\s{2,}/;
-const doubleSymbolRegex = /[^\w\s]{2,}/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const onlySpecialCharsRegex = /^[^\w\s]+$/;
+import { nameRegex, doubleSpaceRegex, doubleSymbolRegex, emailRegex, onlySpecialCharsRegex } from "../constants/regex";
 
 function validateForm(input) {
     const [name, value] = input;
@@ -12,11 +8,11 @@ function validateForm(input) {
         let valid = false;
 
         if (
-            value.length >= 2 &&                // Input contains no less than 2 characters
-            value.length <= 50 &&               // Input contains no more than 50 characters
-            nameRegex.test(value) &&            // Input contains only letters, spaces, hyphens, and apostrophes
-            !doubleSpaceRegex.test(value) &&    // Input does not contain double spaces
-            !doubleSymbolRegex.test(value)      // Input does not contain double symbols
+            value.length >= 2 &&                
+            value.length <= 50 &&               
+            nameRegex.test(value) &&            
+            !doubleSpaceRegex.test(value) &&    
+            !doubleSymbolRegex.test(value)      
         ) {
             valid = true;
         }
@@ -29,7 +25,7 @@ function validateForm(input) {
         let valid = false;
 
         if (
-            emailRegex.test(value)              // Input starts with one or more characters that are not whitespace or @, has exactly one @, has valid domain with at least one dot, has valid TLD
+            emailRegex.test(value)              
         ) {
             valid = true;
         }
@@ -42,11 +38,11 @@ function validateForm(input) {
         let valid = false;
 
         if (
-            value.length >= 10 &&               // Input contains no less than 10 characters
-            value.length <= 500 &&              // Input contains no more than 500 characters
-            !doubleSpaceRegex.test(value) &&    // Input does not contain double spaces
-            !doubleSymbolRegex.test(value) &&   // Input does not contain double symbols
-            !onlySpecialCharsRegex.test(value)  // Input is not just special characters
+            value.length >= 10 &&               
+            value.length <= 500 &&              
+            !doubleSpaceRegex.test(value) &&    
+            !doubleSymbolRegex.test(value) &&   
+            !onlySpecialCharsRegex.test(value)  
         ) {
             valid = true;
         }
