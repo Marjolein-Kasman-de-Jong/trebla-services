@@ -30,6 +30,7 @@ textarea {
   --gradient-start: #32346A;
   --gradient-middle: #D7316D;
   --gradient-end: #F9E129;
+  --error: #ff3333;
 }
 
 /* Typography */
@@ -141,6 +142,10 @@ html {
 
 .strong {
   font-size: 1.2rem;
+}
+
+.error {
+  color: var(--error);
 }
 
 /* --Links */

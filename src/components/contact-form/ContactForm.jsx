@@ -10,6 +10,7 @@ import validateForm from "../../helpers/validateForm";
 
 // Constants
 import validationErrorMessages from "../../constants/validationErrorMessages";
+import sanitizationErrorMessage from "../../constants/satitizationErrorMessage";
 
 // Styles
 import "./contact-form.css";
@@ -84,7 +85,7 @@ export default function ContactForm() {
         if (/script|onerror|onload/i.test(value)) {
             setSanitizationError(prevState => ({
                 ...prevState,
-                [name]: "Malicious content detected."
+                [name]: sanitizationErrorMessage
             }));
         } else {
             setSanitizationError(prevState => ({
@@ -92,13 +93,13 @@ export default function ContactForm() {
                 [name]: ""
             }));
         }
-
+        
         setFormState({
             ...formState,
-            [name]: sanitizedValue
+            [name]: sanitizedValue.trim()
         })
     }
-
+    console.log(formState)
     // Send email
     const sendEmail = (e) => {
         e.preventDefault();
@@ -110,7 +111,7 @@ export default function ContactForm() {
             message: formState.message,
         };
 
-        !sanitizationError &&
+        Object.values(sanitizationError).every(value => value === "") &&
             emailjs.send('Trebla_Services_Tes', 'template_jtim1j9', templateParams, 'EezajjiDyM7CFG1Ej')
                 .then((result) => {
                     console.log(result.text);
@@ -133,16 +134,17 @@ export default function ContactForm() {
                 onChange={handleInputChange}
             />
             {
-                validationError.from_name &&
-                    <p className="error">
-                        {validationError.from_name}
-                    </p>
-            }
-            {
-                sanitizationError.from_name &&
-                    <p className="error">
+                sanitizationError.from_name ?
+                    <p className="paragraph-1 error">
                         {sanitizationError.from_name}
                     </p>
+                    :
+                    validationError.from_name ?
+                        <p className="paragraph-1 error">
+                            {validationError.from_name}
+                        </p>
+                        :
+                        null
             }
             <input
                 type="email"
@@ -153,16 +155,17 @@ export default function ContactForm() {
                 onChange={handleInputChange}
             />
             {
-                validationError.reply_to &&
-                    <p className="error">
-                        {validationError.reply_to}
-                    </p>
-            }
-            {
-                sanitizationError.reply_to &&
-                    <p className="error">
+                sanitizationError.reply_to ?
+                    <p className="paragraph-1 error">
                         {sanitizationError.reply_to}
                     </p>
+                    :
+                    validationError.reply_to ?
+                        <p className="paragraph-1 error">
+                            {validationError.reply_to}
+                        </p>
+                        :
+                        null
             }
             <textarea
                 name="message"
@@ -173,16 +176,17 @@ export default function ContactForm() {
             >
             </textarea>
             {
-                validationError.message &&
-                    <p className="error">
-                        {validationError.message}
-                    </p>
-            }
-            {
-                sanitizationError.message &&
-                    <p className="error">
+                sanitizationError.message ?
+                    <p className="paragraph-1 error">
                         {sanitizationError.message}
                     </p>
+                    :
+                    validationError.message ?
+                        <p className="paragraph-1 error">
+                            {validationError.message}
+                        </p>
+                        :
+                        null
             }
             <Button
                 type="submit"
