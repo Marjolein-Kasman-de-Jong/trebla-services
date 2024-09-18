@@ -8,6 +8,9 @@ import slideInOut from "../../animations/slide-in-out";
 import ServiceHighlight from "../../components/service-highlight/ServiceHighlight";
 import HomeIntroCard from "../../components/home-intro-card/HomeIntroCard";
 
+// Hooks
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 // Constants
 import servicePageData from "../../constants/servicePageData";
 
@@ -15,6 +18,8 @@ import servicePageData from "../../constants/servicePageData";
 import "./home.css";
 
 export default function Home() {
+  useScrollToTop();
+  
   const { headerHeight } = useHeader();
 
   return (

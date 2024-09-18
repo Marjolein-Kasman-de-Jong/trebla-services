@@ -1,5 +1,11 @@
-import { useHeader } from "../../context/HeaderContext";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
+
+// Context
+import { useHeader } from "../../context/HeaderContext";
+
+// Hooks
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 // Components
 import ServicePageHero from "../../components/service-page-hero/ServicePageHero";
@@ -15,6 +21,8 @@ import servicePageData from "../../constants/servicePageData";
 import "./service-page.css";
 
 export default function ServicePage({ servicePage }) {
+    useScrollToTop();
+
     const { headerHeight } = useHeader();
 
     return (

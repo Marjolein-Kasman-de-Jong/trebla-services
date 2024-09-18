@@ -1,6 +1,9 @@
 import { useHeader } from "../../context/HeaderContext";
 import { motion } from "framer-motion";
 
+// Hooks
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 // Components
 import LegalPageHeader from "../../components/legal-page-header/LegalPageHeader";
 import LegalPageContent from "../../components/legal-page-content/LegalPageContent";
@@ -15,6 +18,8 @@ import legalPageData from "../../constants/legalPageData";
 import "./legal-page.css";
 
 export default function LegalPage({ legalPage }) {
+    useScrollToTop();
+    
     const { headerHeight } = useHeader();
 
     return (

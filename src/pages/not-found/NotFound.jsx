@@ -4,10 +4,15 @@ import { motion } from "framer-motion";
 // Animations
 import slideInOut from "../../animations/slide-in-out";
 
+// Hooks
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 // Styles
 import "./not-found.css";
 
 export default function NotFound() {
+  useScrollToTop();
+  
   const { headerHeight } = useHeader();
 
   return (

@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 // Context
 import { useHeader } from "../../context/HeaderContext";
 
+// Hooks
+import useScrollToTop from "../../hooks/useScrollToTop";
+
 // Components
 import ContactForm from "../../components/contact-form/ContactForm";
 import ContactFormSuccessMessage from "../../components/contact-form-success-message/ContactFormSuccessMessage";
@@ -15,6 +18,8 @@ import slideInOut from "../../animations/slide-in-out";
 import "./contact.css";
 
 export default function Contact() {
+  useScrollToTop();
+  
   const { headerHeight } = useHeader();
 
   const [messageIsSentSuccessfully, toggleMessageIsSentSuccessfully] = useState(false);
