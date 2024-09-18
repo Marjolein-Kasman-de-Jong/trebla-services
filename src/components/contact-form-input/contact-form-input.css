@@ -1,0 +1,10 @@
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 25vh;
+}

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 // Components
+import ContactFormInput from "../contact-form-input/ContactFormInput";
 import Button from "../button/Button";
 
 // Helpers
-import handleInputChange from "../../helpers/handleInputChange";
 import sendEmail from "../../helpers/sendEmail";
 import setSubmitButtonState from "../../helpers/setSubmitButtonState";
 import setFormValidationState from "../../helpers/setFormValidationState";
@@ -16,7 +16,7 @@ import validationErrorMessages from "../../constants/validationErrorMessages";
 import "./contact-form.css";
 
 export default function ContactForm() {
-    // Monitor form state
+    // Form state
     const [formState, setFormState] = useState({
         from_name: "",
         reply_to: "",
@@ -59,69 +59,23 @@ export default function ContactForm() {
             className="contact-form"
             onSubmit={(e) => sendEmail(e, formState, sanitizationError)}
         >
-            <input
-                type="text"
-                name="from_name"
-                id="from_name"
-                placeholder="Naam"
-                required
-                onChange={(e) => handleInputChange(e, formState, setFormState, setSanitizationError)}
-            />
+            {/* Input fields */}
             {
-                sanitizationError.from_name ?
-                    <p className="paragraph-1 error">
-                        {sanitizationError.from_name}
-                    </p>
-                    :
-                    validationError.from_name ?
-                        <p className="paragraph-1 error">
-                            {validationError.from_name}
-                        </p>
-                        :
-                        null
+                Object.keys(formState).map((item) => {
+                    return (
+                        <ContactFormInput 
+                            key={item} 
+                            inputField={item} 
+                            formState={formState} 
+                            setFormState={setFormState} 
+                            validationError={validationError} 
+                            sanitizationError={sanitizationError} 
+                            setSanitizationError={setSanitizationError} 
+                        />
+                    )
+                })
             }
-            <input
-                type="email"
-                name="reply_to"
-                id="reply_to"
-                placeholder="Email"
-                required
-                onChange={(e) => handleInputChange(e, formState, setFormState, setSanitizationError)}
-            />
-            {
-                sanitizationError.reply_to ?
-                    <p className="paragraph-1 error">
-                        {sanitizationError.reply_to}
-                    </p>
-                    :
-                    validationError.reply_to ?
-                        <p className="paragraph-1 error">
-                            {validationError.reply_to}
-                        </p>
-                        :
-                        null
-            }
-            <textarea
-                name="message"
-                id="message"
-                placeholder="Bericht"
-                required
-                onChange={(e) => handleInputChange(e, formState, setFormState, setSanitizationError)}
-            >
-            </textarea>
-            {
-                sanitizationError.message ?
-                    <p className="paragraph-1 error">
-                        {sanitizationError.message}
-                    </p>
-                    :
-                    validationError.message ?
-                        <p className="paragraph-1 error">
-                            {validationError.message}
-                        </p>
-                        :
-                        null
-            }
+            {/* Submit button */}
             <Button
                 type="submit"
                 isDisabled={isDisabled}
