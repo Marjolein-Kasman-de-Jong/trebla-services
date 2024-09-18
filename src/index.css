@@ -31,6 +31,7 @@ textarea {
   --gradient-middle: #D7316D;
   --gradient-end: #F9E129;
   --error: #ff3333;
+  --success: #86d439;
 }
 
 /* Typography */
@@ -146,6 +147,10 @@ html {
 
 .error {
   color: var(--error);
+}
+
+.success {
+  color: var(--success);
 }
 
 /* --Links */

@@ -15,7 +15,7 @@ import validationErrorMessages from "../../constants/validationErrorMessages";
 // Styles
 import "./contact-form.css";
 
-export default function ContactForm() {
+export default function ContactForm( {toggleMessageIsSentSuccessfully} ) {
     // Form state
     const [formState, setFormState] = useState({
         from_name: "",
@@ -57,7 +57,7 @@ export default function ContactForm() {
     return (
         <form
             className="contact-form"
-            onSubmit={(e) => sendEmail(e, formState, sanitizationError)}
+            onSubmit={(e) => sendEmail(e, formState, sanitizationError, toggleMessageIsSentSuccessfully)}
         >
             {/* Input fields */}
             {

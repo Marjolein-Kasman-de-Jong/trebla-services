@@ -1,0 +1,11 @@
+.contact-form-success-message {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.checkmark {
+    width: 30px;
+    height: 30px;
+    color: var(--success);
+}

@@ -1,8 +1,12 @@
-import { useHeader } from "../../context/HeaderContext";
+import { useState } from "react";
 import { motion } from "framer-motion";
+
+// Context
+import { useHeader } from "../../context/HeaderContext";
 
 // Components
 import ContactForm from "../../components/contact-form/ContactForm";
+import ContactFormSuccessMessage from "../../components/contact-form-success-message/ContactFormSuccessMessage";
 
 // Animations
 import slideInOut from "../../animations/slide-in-out";
@@ -12,6 +16,8 @@ import "./contact.css";
 
 export default function Contact() {
   const { headerHeight } = useHeader();
+
+  const [messageIsSentSuccessfully, toggleMessageIsSentSuccessfully] = useState(false);
 
   return (
     <motion.main 
@@ -25,7 +31,13 @@ export default function Contact() {
         <h2 className="heading-2">
           Contact
         </h2>
-        <ContactForm />
+        {
+          messageIsSentSuccessfully ?
+            <ContactFormSuccessMessage />
+            :
+            <ContactForm toggleMessageIsSentSuccessfully={toggleMessageIsSentSuccessfully} />
+        }
+        
     </motion.main>
   )
 }
