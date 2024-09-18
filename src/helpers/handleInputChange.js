@@ -15,6 +15,8 @@ function handleInputChange(e, formState, setFormState, setSanitizationError) {
             ...prevState,
             [name]: sanitizationErrorMessage
         }));
+        // Replace dangerous script with empty string
+        sanitizedValue = "";
     } else {
         setSanitizationError(prevState => ({
             ...prevState,
