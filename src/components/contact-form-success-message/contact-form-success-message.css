@@ -8,4 +8,24 @@
     width: 30px;
     height: 30px;
     color: var(--success);
+    animation-name: success;
+    animation-duration: .7s;
+}
+
+@keyframes success {
+    0% {
+        scale: 0;
+    }
+
+    33% {
+        scale: 1.5;
+    }
+
+    66% {
+        scale: .75;
+    }
+
+    100% {
+        scale: 1;
+    }
 }
