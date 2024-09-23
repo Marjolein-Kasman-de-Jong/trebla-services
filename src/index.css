@@ -141,6 +141,12 @@ html {
   line-height: 1.875rem;
 }
 
+.paragraph-4 {
+  font-size: 0.8125rem;
+  color: var(--white);
+  font-style: italic;
+}
+
 .strong {
   font-size: 1.2rem;
 }
@@ -163,7 +169,10 @@ html {
 }
 
 .link-2 {
-  /* ----Text link */
+  /* ----Footer link */
+  font-size: 0.8125rem;
+  color: var(--white);
+  text-decoration: none;
 }
 
 /* --Buttons */
