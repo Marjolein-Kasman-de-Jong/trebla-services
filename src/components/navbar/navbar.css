@@ -29,6 +29,13 @@
     transform: translateY(0);
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .navbar.hidden,
+    .navbar.visible {
+        transform: none;
+    }
+}
+
 /* Nav items */
 
 .nav-item {

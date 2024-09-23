@@ -14,35 +14,35 @@ import servicePageData from "../../constants/servicePageData";
 import "./navbar.css";
 
 export default function Navbar() {
-    // Get nav items from servicePageData
-    const navItems = Object.keys(servicePageData);
-
     // Monitor navbar component height
     const { navbarRef } = useHeader();
 
     // Show/hide navbar
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-     
+
     const handleScroll = () => {
         const currentScrollY = window.scrollY;
-    
+
         if (currentScrollY > lastScrollY) {
-          setShowNavbar(false);
+            setShowNavbar(false);
         } else {
-          setShowNavbar(true);
+            setShowNavbar(true);
         }
-    
+
         setLastScrollY(currentScrollY);
-      };
-    
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-    
+
         return () => {
-          window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
-      }, [lastScrollY]);
+    }, [lastScrollY]);
+
+    // Get nav items from servicePageData
+    const navItems = Object.keys(servicePageData);
 
     return (
         <nav ref={navbarRef} className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}>
