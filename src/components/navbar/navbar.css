@@ -22,7 +22,7 @@
 }
 
 .navbar.hidden {
-    transform: translateY(-100%);
+    transform: translateY(-98%);
 }
 
 .navbar.visible {
