@@ -5,13 +5,18 @@
     max-width: 100%;
     object-fit: contain;
     cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.clickable-image:not(.active):hover {
+    transform: scale(101%);
 }
 
 .clickable-image.active {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: scale(100%) translate(-50%, -50%);
+    transform: scale(125%) translate(-50%, -50%);
     z-index: 1000;
 }
 
