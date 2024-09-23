@@ -15,6 +15,7 @@ export default function PageFooter() {
 
   return (
     <footer className="page-footer">
+      {/* Legal content navigation */}
       <ul>
         {navItems.map((navItem, index) => (
           <li
@@ -30,6 +31,7 @@ export default function PageFooter() {
           </li>
         ))}
       </ul>
+      {/* Copyright notice */}
       <p className="paragraph-4">Trebla Services {getCurrentYear()}</p>
     </footer>
   )
