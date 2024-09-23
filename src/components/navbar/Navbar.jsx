@@ -1,4 +1,8 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+// Context
+import { useHeader } from "../../context/HeaderContext";
 
 // Helpers
 import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
@@ -10,10 +14,38 @@ import servicePageData from "../../constants/servicePageData";
 import "./navbar.css";
 
 export default function Navbar() {
+    // Get nav items from servicePageData
     const navItems = Object.keys(servicePageData);
 
+    // Monitor navbar component height
+    const { navbarRef } = useHeader();
+
+    // Show/hide navbar
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+     
+    const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+    
+        if (currentScrollY > lastScrollY) {
+          setShowNavbar(false);
+        } else {
+          setShowNavbar(true);
+        }
+    
+        setLastScrollY(currentScrollY);
+      };
+    
+      useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, [lastScrollY]);
+
     return (
-        <nav className="navbar">
+        <nav ref={navbarRef} className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}>
             <ul>
                 {navItems.map((navItem, index) => (
                     <li

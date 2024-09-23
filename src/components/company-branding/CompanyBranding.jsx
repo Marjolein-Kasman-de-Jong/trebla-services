@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
+// Context
+import { useHeader } from "../../context/HeaderContext";
+
 // Images
 import companyLogo from "/company-logo.jpg";
 
@@ -7,6 +10,10 @@ import companyLogo from "/company-logo.jpg";
 import "./company-branding.css";
 
 export default function CompanyBranding() {
+    // Monitor company branding component height
+    const { companyBrandingRef } = useHeader();
+
+    // Handle click on nav item
     const navigate = useNavigate();
     
     const handleClick = () => {
@@ -14,7 +21,7 @@ export default function CompanyBranding() {
     }
 
     return (
-        <div className="company-branding">
+        <div ref={companyBrandingRef} className="company-branding">
             {/* Company name */}
             <h1 className="heading-1" onClick={handleClick}>
                 Trebla Services

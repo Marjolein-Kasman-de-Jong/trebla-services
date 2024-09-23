@@ -1,7 +1,7 @@
 .company-branding {
-    width: 90%;
-    max-width: 1200px;
-    margin: 10px auto;
+    background-color: var(--white);
+    padding: 20px 10%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -22,6 +22,10 @@
     .company-branding {
         justify-content: space-between;
     }
+}
+
+.company-branding > * {
+    flex: 1;
 }
 
 /* Company name */

@@ -3,14 +3,22 @@ import React, { createContext, useContext, useRef, useState, useEffect } from 'r
 const HeaderContext = createContext();
 
 export const HeaderProvider = ({ children }) => {
+  // Page header component height
   const headerRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState(0);
 
+  // Company branding component height
+  const companyBrandingRef = useRef(null);
+  const [companyBrandingHeight, setCompanyBrandingHeight] = useState(0); 
+   
+  // Navbar component height
+  const navbarRef = useRef(null);
+  const [navbarHeight, setNavbarHeight] = useState(0);
+
+  // Update page header component height
   useEffect(() => {
     const updateHeaderHeight = () => {
-      if (headerRef.current) {
-        setHeaderHeight(headerRef.current.offsetHeight);
-      }
+      setHeaderHeight(companyBrandingRef.current.offsetHeight + navbarRef.current.offsetHeight)
     }
 
     updateHeaderHeight();
@@ -19,10 +27,42 @@ export const HeaderProvider = ({ children }) => {
     return () => {
       window.removeEventListener('resize', updateHeaderHeight);
     }
-  }, [headerHeight])
+  }, [companyBrandingHeight, navbarHeight])
+
+  // Update company branding component height
+  useEffect(() => {
+    const updateCompanyBrandingHeight = () => {
+      if (companyBrandingRef.current) {
+        setCompanyBrandingHeight(companyBrandingRef.current.offsetHeight);
+      }
+    }
+
+    updateCompanyBrandingHeight();
+    window.addEventListener('resize', updateCompanyBrandingHeight);
+
+    return () => {
+      window.removeEventListener('resize', updateCompanyBrandingHeight);
+    }
+  }, [companyBrandingHeight])
+
+  // Update navbar component height 
+  useEffect(() => {
+    const updateNavbarHeight = () => {
+      if (navbarRef.current) {
+        setNavbarHeight(navbarRef.current.offsetHeight);
+      }
+    }
+
+    updateNavbarHeight();
+    window.addEventListener('resize', updateNavbarHeight);
+
+    return () => {
+      window.removeEventListener('resize', updateNavbarHeight);
+    }
+  }, [navbarHeight])
 
   return (
-    <HeaderContext.Provider value={{ headerHeight, headerRef }}>
+    <HeaderContext.Provider value={{ headerHeight, headerRef, companyBrandingHeight, companyBrandingRef, navbarHeight, navbarRef }}>
       {children}
     </HeaderContext.Provider>
   )
