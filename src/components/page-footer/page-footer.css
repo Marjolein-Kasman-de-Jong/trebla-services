@@ -1,13 +1,15 @@
 /* Push footer to bottom of viewport */
-html, body, #root {
+html,
+body,
+#root {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-  
-  main {
+}
+
+main {
     flex: 1;
-  }
+}
 
 /* Page footer */
 
@@ -26,7 +28,7 @@ html, body, #root {
     }
 }
 
-.page-footer > * {
+.page-footer>* {
     flex: 1;
     hyphens: none;
     text-align: center;
@@ -52,7 +54,7 @@ html, body, #root {
     }
 }
 
-.page-footer ul > * {
+.page-footer ul>* {
     flex: 1;
 }
 
