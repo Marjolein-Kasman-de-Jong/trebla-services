@@ -37,7 +37,14 @@ export default function ContactForm( {toggleMessageIsSentSuccessfully} ) {
     })
 
     useEffect(() => {
-        setFormValidationState(formState, formIsValid, toggleFormIsValid, validationError, setValidationError, validationErrorMessages);
+        setFormValidationState(
+            formState, 
+            formIsValid, 
+            toggleFormIsValid, 
+            validationError, 
+            setValidationError, 
+            validationErrorMessages
+        );
     }, [formState])
 
     // Sanitization error state    
@@ -51,13 +58,21 @@ export default function ContactForm( {toggleMessageIsSentSuccessfully} ) {
     const [isDisabled, toggleIsDisabled] = useState(true);
 
     useEffect(() => {
-        setSubmitButtonState(formIsValid, toggleIsDisabled);
+        setSubmitButtonState(
+            formIsValid, 
+            toggleIsDisabled
+        );
     }, [formIsValid])
 
     return (
         <form
             className="contact-form"
-            onSubmit={(e) => sendEmail(e, formState, sanitizationError, toggleMessageIsSentSuccessfully)}
+            onSubmit={(e) => sendEmail(
+                e, 
+                formState, 
+                sanitizationError, 
+                toggleMessageIsSentSuccessfully
+            )}
         >
             {/* Input fields */}
             {

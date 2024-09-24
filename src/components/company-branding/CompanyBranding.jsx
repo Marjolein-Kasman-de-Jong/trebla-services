@@ -21,9 +21,15 @@ export default function CompanyBranding() {
     }
 
     return (
-        <div ref={companyBrandingRef} className="company-branding">
+        <div 
+            ref={companyBrandingRef} 
+            className="company-branding"
+        >
             {/* Company name */}
-            <h1 className="heading-1" onClick={handleClick}>
+            <h1 
+                className="heading-1" 
+                onClick={handleClick}
+            >
                 Trebla Services
             </h1>
             {/* Company description */}
