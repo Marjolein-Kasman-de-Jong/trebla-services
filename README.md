@@ -10,4 +10,4 @@ I redesigned and rebuilt the existing Trebla Services website using modern web t
 
 <hr>
 
-![Trebla Services Website](https://github.com/Marjolein-Kasman-de-Jong/trebla-services/blob/main/public/images/screenshot.png)
+![Trebla Services Website](https://github.com/Marjolein-Kasman-de-Jong/trebla-services/blob/main/public/screenshot.png)
