@@ -8,11 +8,11 @@ import useScrollToTop from "../../hooks/useScrollToTop";
 import LegalPageHeader from "../../components/legal-page-header/LegalPageHeader";
 import LegalPageContent from "../../components/legal-page-content/LegalPageContent";
 
-// Animations
-import slideInOut from "../../animations/slide-in-out";
-
 // Constants
 import legalPageData from "../../constants/legalPageData";
+
+// Animations
+import slideInOut from "../../animations/slide-in-out";
 
 // Styles
 import "./legal-page.css";

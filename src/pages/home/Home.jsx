@@ -1,18 +1,18 @@
 import { useHeader } from "../../context/HeaderContext";
 import { motion } from "framer-motion";
 
-// Animations
-import slideInOut from "../../animations/slide-in-out";
+// Hooks
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 // Components
 import ServiceHighlight from "../../components/service-highlight/ServiceHighlight";
 import HomeIntroCard from "../../components/home-intro-card/HomeIntroCard";
 
-// Hooks
-import useScrollToTop from "../../hooks/useScrollToTop";
-
 // Constants
 import servicePageData from "../../constants/servicePageData";
+
+// Animations
+import slideInOut from "../../animations/slide-in-out";
 
 // Styles
 import "./home.css";
@@ -38,7 +38,10 @@ export default function Home() {
         <div className="home-intro-card-container">
           {
             Object.entries(servicePageData).map(([key]) => {
-              return <HomeIntroCard key={key} data={servicePageData[key].hero} />;
+              return <HomeIntroCard 
+                key={key} 
+                data={servicePageData[key].hero} 
+              />;
             })
           }
         </div>

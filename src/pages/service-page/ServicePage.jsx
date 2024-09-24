@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 // Context
@@ -11,14 +10,11 @@ import useScrollToTop from "../../hooks/useScrollToTop";
 import ServicePageHero from "../../components/service-page-hero/ServicePageHero";
 import ServicePageTabs from "../../components/service-page-tabs/ServicePageTabs";
 
-// Animations
-import slideInOut from "../../animations/slide-in-out";
-
 // Constants
 import servicePageData from "../../constants/servicePageData";
 
-// Styles
-import "./service-page.css";
+// Animations
+import slideInOut from "../../animations/slide-in-out";
 
 export default function ServicePage({ servicePage }) {
     useScrollToTop();
