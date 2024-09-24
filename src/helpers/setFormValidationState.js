@@ -1,6 +1,13 @@
 import validateForm from "./validateForm";
 
-function setFormValidationState(formState, formIsValid, toggleFormIsValid, validationError, setValidationError, validationErrorMessages) {
+function setFormValidationState(
+    formState, 
+    formIsValid, 
+    toggleFormIsValid, 
+    validationError, 
+    setValidationError, 
+    validationErrorMessages
+) {
     Object.entries(formState).forEach(([name, value]) => {
         if (value) {
             const propIsValid = validateForm([name, value]);
