@@ -28,7 +28,12 @@ export default function ContactFormInput({ inputField, formState, setFormState, 
         id: inputField,
         placeholder: placeholder,
         required: true,
-        onChange: (e) => handleInputChange(e, formState, setFormState, setSanitizationError)
+        onChange: (e) => handleInputChange(
+            e, 
+            formState, 
+            setFormState, 
+            setSanitizationError
+        )
     }
 
     return (
