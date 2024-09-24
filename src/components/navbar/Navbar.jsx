@@ -34,10 +34,10 @@ export default function Navbar() {
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, [lastScrollY]);
 
@@ -45,7 +45,7 @@ export default function Navbar() {
     const navItems = Object.keys(servicePageData);
 
     return (
-        <nav ref={navbarRef} className={`navbar ${showNavbar ? 'visible' : 'hidden'}`}>
+        <nav ref={navbarRef} className={`navbar ${showNavbar ? "visible" : "hidden"}`}>
             <ul>
                 {navItems.map((navItem, index) => (
                     <li
@@ -64,7 +64,7 @@ export default function Navbar() {
                     className="nav-item"
                 >
                     <Link
-                        to={`/contact`}
+                        to={"/contact"}
                         className="nav-link link-1"
                     >
                         {firstLetterToUpperCase("contact")}

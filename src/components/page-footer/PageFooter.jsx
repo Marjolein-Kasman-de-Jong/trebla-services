@@ -32,7 +32,9 @@ export default function PageFooter() {
         ))}
       </ul>
       {/* Copyright notice */}
-      <p className="paragraph-4">Trebla Services {getCurrentYear()}</p>
+      <p className="paragraph-4">
+        Trebla Services {getCurrentYear()}
+      </p>
     </footer>
   )
 }

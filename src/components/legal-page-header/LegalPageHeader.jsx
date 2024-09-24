@@ -1,9 +1,6 @@
 // Helpers
 import firstLetterToUpperCase from "../../helpers/firstLetterToUpperCase";
 
-// Styles
-import "./legal-page-header.css";
-
 export default function LegalPageHeader({ content }) {
     return (
         <header>

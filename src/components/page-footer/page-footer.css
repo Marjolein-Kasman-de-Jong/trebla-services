@@ -28,7 +28,7 @@ main {
     }
 }
 
-.page-footer>* {
+.page-footer > * {
     flex: 1;
     hyphens: none;
     text-align: center;
@@ -54,7 +54,7 @@ main {
     }
 }
 
-.page-footer ul>* {
+.page-footer ul > * {
     flex: 1;
 }
 
