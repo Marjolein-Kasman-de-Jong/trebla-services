@@ -13,7 +13,7 @@ function sendEmail(e, formState, sanitizationError, toggleMessageIsSentSuccessfu
     // Check for sanitization errors
     Object.values(sanitizationError).every(value => value === "") &&
         // Send email
-        emailjs.send('Trebla_Services_Tes', 'template_jtim1j9', templateParams, 'EezajjiDyM7CFG1Ej')
+        emailjs.send('service_0ks0pcv', 'template_888buo3', templateParams, 'F1V9mBTGLKd7X6S5Q')
             .then((result) => {
                 console.log(result.text);
                 result.status === 200 && toggleMessageIsSentSuccessfully(true);
