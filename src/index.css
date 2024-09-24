@@ -116,7 +116,6 @@ html {
 @media screen and (min-width: 353px) {
   .paragraph-2 {
     font-size: .75rem;
-    
   }
 }
 
@@ -173,12 +172,6 @@ html {
   font-size: 0.8125rem;
   color: var(--white);
   text-decoration: none;
-}
-
-/* --Buttons */
-
-.button-1 {
-  /* ----Regular button */
 }
 
 /* Images */
