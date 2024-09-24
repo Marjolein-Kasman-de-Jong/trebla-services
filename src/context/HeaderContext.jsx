@@ -4,7 +4,7 @@ const HeaderContext = createContext();
 
 export const HeaderProvider = ({ children }) => {
   // Page header component height
-  const headerRef = useRef(null);
+  // const headerRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState(0);
 
   // Company branding component height
@@ -62,7 +62,7 @@ export const HeaderProvider = ({ children }) => {
   }, [navbarHeight])
 
   return (
-    <HeaderContext.Provider value={{ headerHeight, headerRef, companyBrandingHeight, companyBrandingRef, navbarHeight, navbarRef }}>
+    <HeaderContext.Provider value={{ headerHeight, companyBrandingHeight, companyBrandingRef, navbarHeight, navbarRef }}>
       {children}
     </HeaderContext.Provider>
   )
